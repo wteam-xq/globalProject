@@ -12,7 +12,7 @@ var admin = require('./routes/admin');
 var app = express();
 
 // 链接数据库
-var db = mongoose.connect('mongodb://localhost/mongoDemo');
+var db = mongoose.connect('mongodb://localhost/globalDb');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

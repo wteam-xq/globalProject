@@ -4,7 +4,7 @@
 
 #### 本地部署（win8 64bit为例）
 * 安装nodeJs
-* 安装mongodb（最好配置成window服务），生成mongoDemo数据库、生成users表
+* 安装mongodb（最好配置成window服务），生成globalDb数据库、生成users表
   * 手动安装mongodb, 下载地址： [mongodb下载](http://pan.baidu.com/s/1qWG5Lr2)
   * mongodb 配置以及设置成windows服务：[配置mongodb](http://blog.csdn.net/liusong0605/article/details/10574863)
   * mongodb shell 控制台使用: [mongodb 基本命令](http://www.cnblogs.com/xusir/archive/2012/12/24/2830957.html)
@@ -13,8 +13,8 @@ mongo
 MongoDB shell version: 2.6.5
 connecting to: test
 
-use mongoDemo
-switched to db mongoDemo
+use globalDb
+switched to db globalDb
 
 db.createCollection("users")
 { "ok" : 1}
