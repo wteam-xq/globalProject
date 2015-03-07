@@ -24,7 +24,7 @@ $(function(){
       if (data.error){
         $('#removeTips').html('删除异常:' + data.error + '  请刷新重试。');
       }else{
-        window.location.href = '/admin/';
+        window.location.href = '/admin/users';
       }
     }, 'json');
   });

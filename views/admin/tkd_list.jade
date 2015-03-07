@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  .row
+    .col-md-8
+    .col-md-4.text-right
+      a(href="/users/index").btn.btn-primary.mright-15 查看首页
+      a(href="/admin/index").btn.btn-primary 返回
+  h3.text-center 三国杀FAQ
+
+  .row
+    .col-md-3
+      .thumbnail.tile.tile-medium.tile-pink
+        a(href='#')
+          h1 规则
+    .col-md-3
+      .thumbnail.tile.tile-medium.tile-green
+        a(href='/#')
+          h1 游戏牌
+    .col-md-3
+      .thumbnail.tile.tile-medium.tile-red
+        a(href='/#')
+          h1 武将
+    .col-md-3
+      .thumbnail.tile.tile-medium.tile-teal
+        a(href='/#')
+          h1 攻略
+
+  //导入用户处理脚本
+  //- script(src="/javascripts/three_kingdoms.js")

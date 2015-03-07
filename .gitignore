@@ -3,3 +3,4 @@ dest/*
 node_modules/*
 bower_components/*
 public/components/*
+public/images/*

@@ -2,9 +2,22 @@ var express = require('express');
 var router = express.Router();
 var adminControl = require('../control/adminCtrl');
 
-/* GET users listing. */
-router.get('/', adminControl.userList);
 router.get('/test', adminControl.testList);
+
+// 后台首页菜单
+router.get('/', adminControl.adminIndex);
+router.get('/index', adminControl.adminIndex);
+
+// 三国杀后台列表页
+router.get('/tkd', adminControl.tkdList);
+router.get('/tkd/index', adminControl.tkdList);
+
+// 个人简历后台列表页
+router.get('/resume', adminControl.resumeIndex);
+router.get('/resume/index', adminControl.resumeIndex);
+
+/* 用户组后台列表页 */
+router.get('/users', adminControl.userList);
 
 /*users add. */
 router.route('/user/add')

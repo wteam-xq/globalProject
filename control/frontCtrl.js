@@ -7,8 +7,8 @@ webCtrol.index = function(req, res){
     if (err){
       console.log('查询异常');
     }else{
-      res.render('index', { 
-        title: 'Express' ,
+      res.render('users/index', { 
+        title: '用户组页面' ,
         users: users
       });
     }

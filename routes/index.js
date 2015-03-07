@@ -4,7 +4,11 @@ var frontControl = require('../control/frontCtrl');
 
 /* GET home page. */
 router.get('/', frontControl.index);
+
 /* GET index page. */
 router.get('/index', frontControl.index);
+
+/* 用户组首页. */
+router.get('/users/index', frontControl.index);
 
 module.exports = router;

@@ -1,6 +1,11 @@
 extends ../layout
 
 block content
+  .row
+    .col-md-8
+    .col-md-4.text-right
+      a(href="/users/index").btn.btn-primary.mright-15 查看首页
+      a(href="/admin/index").btn.btn-primary 返回
   h3.text-center 用户后台列表
   table.table.table-bordered
     thead

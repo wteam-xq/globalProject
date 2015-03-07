@@ -1,0 +1,87 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*站点间距*/
+.mright-15{
+  margin-right: 15px;
+}
+
+.mleft-15{
+  margin-left: 15px;
+}
+
+/*metro 风格颜色块*/
+.tile{
+  display: block;
+  cursor: pointer;
+  -webkit-perspective: 0;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .2s;
+  float: left;
+  min-width: 75px;
+  min-height: 75px;
+  text-align: center;
+  opacity: .75;
+  background-color: #2e8bcc;
+  z-index: 1;
+  border: 4px solid #fff;
+  color: #fff;
+}
+.tile:hover{
+  opacity: 1;
+}
+.tile.tile-medium{
+  width:150px;
+  height: 150px;
+}
+.tile.tile-pink{
+  background-color: #e671b8;
+}
+.tile.tile-green{
+  background-color: #393;
+}
+.tile.tile-red{
+  background-color: #e51400;
+}
+.tile.tile-teal{
+  background-color: #00aba9;
+}
+.tile-blue{
+  background-color: #2e8bcc;
+}
+.tile-yellow{
+  background-color: #ffc40d;
+}
+.tile-purple{
+  background-color: #7b4f9d;
+}
+.tile-lime{
+  background-color: #8cbf26;
+}
+.tile-magenta{
+  background-color: #ff0097;
+}
+.tile-turquoise{
+  background-color: #1abc9c;
+}
+.tile-green-sea{
+  background-color: #16a085;
+}
+.tile-emerald{
+  background-color: #2ecc71;
+}
+.tile a{
+  text-decoration: none;
+}
+.tile a:hover{
+  text-decoration: none;
+}
+.tile h1{
+  color: #fff;
+}
