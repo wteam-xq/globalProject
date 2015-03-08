@@ -6,25 +6,27 @@ block content
     .col-md-4.text-right
       a(href="/users/index").btn.btn-primary.mright-15 查看首页
       a(href="/admin/index").btn.btn-primary 返回
-  h3.text-center 三国杀FAQ
 
-  .row
-    .col-md-3
-      .thumbnail.tile.tile-medium.tile-pink
-        a(href='#')
-          h1 规则
-    .col-md-3
-      .thumbnail.tile.tile-medium.tile-green
-        a(href='/#')
-          h1 游戏牌
-    .col-md-3
-      .thumbnail.tile.tile-medium.tile-red
-        a(href='/#')
-          h1 武将
-    .col-md-3
-      .thumbnail.tile.tile-medium.tile-teal
-        a(href='/#')
-          h1 攻略
+  //- 主页面 
+  .mainmenu.main-panel#mainmenu
+    .menu-nav.row
+      ul.nav.nav-tabs(role="tablist")
+        li.active.col-md-3(id="menu-rule")
+          a(href="#rule" data-toggle="tab") 规则
+        li.col-md-3(id="menu-card")
+          a(href="#card" data-toggle="tab") 游戏牌
+        li.col-md-3(id="menu-heros")
+          a(href="#heros" data-toggle="tab") 武将
+        li.col-md-3(id="menu-str")
+          a(href="#strategy" data-toggle="tab") 攻略
+
+    //- 规则组合
+    .tab-content
+      .list-group.tab-pane(class="fade in active item-list" id="rule") 规则内容
+      .tab-pane(class="fade item-list" id="card") 卡牌内容
+      .tab-pane(class="fade item-list" id="heros") 武将内容
+      .tab-pane(class="fade item-list" id="strategy") 攻略内容
+
 
   //导入用户处理脚本
   //- script(src="/javascripts/three_kingdoms.js")

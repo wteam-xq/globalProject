@@ -2,6 +2,10 @@
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
 * 技术点： mongodb express bootstrap jquery
 
+#### 图片资源百度网盘地址： 
+
+（随时更新）
+
 #### 本地部署（win8 64bit为例）
 * 安装nodeJs
 * 安装mongodb（最好配置成window服务），生成globalDb数据库、生成users表

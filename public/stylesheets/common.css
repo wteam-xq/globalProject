@@ -85,3 +85,20 @@ a {
 .tile h1{
   color: #fff;
 }
+
+/*选项卡样式*/
+#mainmenu{
+  width: 100%;
+  background-color: #CFBAAA;
+  margin-top: 15px;
+}
+.menu-nav{
+  width:100%;
+  margin: 0px 0px 0px !important;
+  background-color: #CFBAAA;
+}
+.menu-nav li{
+  padding: 0px !important;
+  text-align: center !important;
+  border-color: #357ebd !important;
+}
