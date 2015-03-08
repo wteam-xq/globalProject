@@ -12,6 +12,9 @@ router.get('/index', adminControl.adminIndex);
 router.get('/tkd', adminControl.tkdList);
 router.get('/tkd/index', adminControl.tkdList);
 
+router.route('/tkd/addRule')
+.get(adminControl.addTkdRule);
+
 // 个人简历后台列表页
 router.get('/resume', adminControl.resumeIndex);
 router.get('/resume/index', adminControl.resumeIndex);
