@@ -2,7 +2,7 @@
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
 * 技术点： mongodb express bootstrap jquery
 
-#### 图片资源百度网盘地址： 
+#### 图片资源百度网盘地址：[图片资源](http://pan.baidu.com/s/1i35oVFf) 
 
 （随时更新）
 
