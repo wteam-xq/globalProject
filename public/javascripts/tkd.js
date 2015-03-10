@@ -43,4 +43,16 @@ $(function(){
     $selected_id.val('');
   });
 
+  // 测试 bootstrap 居中
+  $confirm_dialog.on('shown.bs.modal', function(){
+    var $this = $(this);
+    var $modal_dialog = $this.find('.modal-dialog');
+    var m_top = ( $(document).height() - $modal_dialog.height() )/2;
+    $modal_dialog.css({'margin': m_top + 'px auto'});
+  });
+
+  // 是弹出框居中。。。
+    // var $modal_dialog = $(this.$element[0]).find('.modal-dialog');
+    // var m_top = ( $(document).height() - $modal_dialog.height() )/2;
+    // $modal_dialog.css({'margin': m_top + 'px auto'});
 });
