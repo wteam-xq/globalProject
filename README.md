@@ -51,4 +51,7 @@ node-dev bin/www
 ```
 
 #### 开发计划：
-*03.08 - 03.14 1.完成用户登录； 2.三大块前后台基本页面UI。 3.后台啊规则页添加 百度编辑器， 弹出框垂直居中。
+* 03.08 - 03.14 1.完成用户登录； 2.三大块前后台基本页面UI。 3.后台啊规则页添加 百度编辑器， 弹出框垂直居中。
+
+#### 开发日志
+* 03-11 打开 microBlog 项目， 出现 “Please ensure that you set the default write concern for the database”提示，网上教程暂时无效！！
