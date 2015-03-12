@@ -5,7 +5,8 @@ block content
   br
   .container
     .row
-      form.form-horizontal(method="POST" action="add" name='userform')
+      .alert.alert-warning.hidden(id='addTips' role='alert') 警告内容
+      form.form-horizontal(method="POST" action="add" name='userform' id='userform')
         .form-group
           label.col-md-2.control-label 姓名
           .col-md-8
@@ -22,10 +23,21 @@ block content
           label.col-md-2.control-label 爱好
           .col-md-8
             input(type="text" id="hobby" name="hobby").form-control
+        .form-group
+          label.col-md-2.control-label 密码
+          .col-md-8
+            input(type="password" id="pas" name="pas").form-control
+        .form-group
+          label.col-md-2.control-label 确认密码
+          .col-md-8
+            input(type="password" id="confirmPas" name="confirmPas").form-control
 
         .form-group
           .col-md-1.col-md-offset-2
-            button(type="submit").btn.btn-primary 提交添加
+            button(type="button" id='commitBtn').btn.btn-primary 提交添加
+            button.hidden(type="submit" id='subBtn').btn.btn-primary 提交添加
           .col-md-2
             a(href="/admin/users").btn.btn-primary 返回
   
+  //导入用户处理脚本
+  script(src="/javascripts/users.js")

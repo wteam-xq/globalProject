@@ -28,9 +28,37 @@ $(function(){
       }
     }, 'json');
   });
-
   $remove_cancel.on('click', function(){
     $selected_id.val('');
+  });
+
+  // 用户添加校验
+  var $commit_btn = $('#commitBtn');
+  $commit_btn.on('click', function(){
+    var $sub_btn = $('#subBtn');
+    var $user_form = $('#userform');
+    var $add_tips = $('#addTips');
+    var _name = $user_form.find('#name').val();
+    var _pass = $user_form.find('#pas').val();
+    var _confirm_pas = $user_form.find('#confirmPas').val();
+
+    var _flg = true;
+    if (!_name || _name == ''){
+      $add_tips.removeClass('hidden');
+      $add_tips.html('姓名不能为空');
+      _flg = false;
+    }else if (!_pass || _pass == ''){
+      $add_tips.removeClass('hidden');
+      $add_tips.html('密码不能为空');
+      _flg = false;
+    }else if (_confirm_pas != _pass){
+      $add_tips.removeClass('hidden');
+      $add_tips.html('确认密码不匹配');
+      _flg = false;
+    }
+    if (_flg){
+      $user_form.trigger('submit');
+    }
   });
 
 });

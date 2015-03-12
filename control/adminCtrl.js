@@ -77,7 +77,8 @@ adminCtrol.addUserPost = function(req, res, next) {
     name: req.body.name,
     age: req.body.age,
     job: req.body.job,
-    hobby: req.body.hobby
+    hobby: req.body.hobby,
+    password: req.body.pas
   };
   User.createInfo(userObj, function(err, user){
     if (err){
