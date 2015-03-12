@@ -110,7 +110,8 @@ adminCtrol.updateUserPost = function(req, res) {
     name: req.body.name,
     age: req.body.age,
     job: req.body.job,
-    hobby: req.body.hobby
+    hobby: req.body.hobby,
+    password: req.body.pas
   };
   User.updateInfo(id, user, function(err, updateCount){
     if (err){

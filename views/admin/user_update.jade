@@ -6,13 +6,14 @@ block content
   .container
     .row
       if user && user.name
-        form.form-horizontal(name="userform" method="POST" action="/admin/user/update")
+        .alert.alert-warning.hidden(id='addTips' role='alert') 警告内容
+        form.form-horizontal(name="userform" id="userform" method="POST" action="/admin/user/update")
           .form-group.hidden
             input(type="text" name="id" value="#{user.id}")
           .form-group
             label.col-md-2.control-label 姓名
             .col-md-8
-              input(type="text" name="name" value="#{user.name}").form-control
+              input(type="text" id="name" name="name" value="#{user.name}").form-control
           .form-group
             label.col-md-2.control-label 年龄
             .col-md-8
@@ -25,10 +26,24 @@ block content
             label.col-md-2.control-label 爱好
             .col-md-8
               input(type="text" name="hobby" value="#{user.hobby}").form-control
+          
+          .form-group
+            label.col-md-2.control-label 密码
+            .col-md-8
+              input(type="password" id="pas" name="pas" value="#{user.password}").form-control
+          .form-group
+            label.col-md-2.control-label 确认密码
+            .col-md-8
+              input(type="password" id="confirmPas" name="confirmPas" value="#{user.password}").form-control
+
           .form-group
             .col-md-1.col-md-offset-2
-              button(type="submit").btn.btn-primary 提交修改
+              button(type="button" id='commitBtn').btn.btn-primary 提交添加
+              button.hidden(type="submit" id='subBtn').btn.btn-primary 提交添加
             .col-md-2
               a(href="/admin/users").btn.btn-primary 返回
       else
         .alert.alert-warning 查询用户信息出错
+
+  //导入用户处理脚本
+  script(src="/javascripts/users.js")
