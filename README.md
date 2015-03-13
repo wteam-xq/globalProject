@@ -2,9 +2,7 @@
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
 * 技术点： mongodb express bootstrap jquery
 
-#### 图片资源百度网盘地址：[图片资源](http://pan.baidu.com/s/1i35oVFf) 
-
-（随时更新）
+#### 图片资源百度网盘地址：[图片资源](http://pan.baidu.com/s/1i35oVFf) （更新ing...）
 
 #### 本地部署（win8 64bit为例）
 * 安装nodeJs
@@ -49,6 +47,3 @@ npm start
 ```Bash
 node-dev bin/www
 ```
-
-#### 开发计划：
-* 03.08 - 03.14 1.完成用户登录； 2.三大块前后台基本页面UI。 3.后台啊规则页添加 百度编辑器， 弹出框垂直居中。

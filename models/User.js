@@ -5,7 +5,10 @@ var SALT_WORK_FACTOR = 10;
 
 var UserSchema = new mongoose.Schema({
   name: {
-    unique: true,
+    type: String
+  },
+  email: {
+    unique: true, 
     type: String
   },
   age: Number,
@@ -74,6 +77,14 @@ UserSchema.statics = {
   findById: function(id, cb){
     return this
       .findOne({_id: id}).exec(cb);
+  },
+  findByName: function(name, cb){
+    return this
+      .find({name: name}).exec(cb);
+  },
+  findByEmail: function(email, cb){
+    return this
+      .find({email: email}).exec(cb);
   },
   createInfo: function(user, cb){
     return this

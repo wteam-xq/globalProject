@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h3.text-center 用户登录
+  .container
+    form(id='loginform' name='loginform' action='/admin/user/login' method='POST')
+      .form-group
+        label 邮箱
+        input(type='text' name='email' id='email' placeholder='请输入用户邮箱').form-control
+      
+      .form-group
+        label 用户密码
+        input(type='password' name='pas' id='pas' placeholder='请输入密码').form-control
+      
+      button(type='button' id='commitBtn').btn.btn-primary 立即登录
+
+  //导入用户处理脚本
+  script(src="/javascripts/users.js")

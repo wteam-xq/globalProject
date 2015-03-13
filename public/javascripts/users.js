@@ -38,14 +38,14 @@ $(function(){
     var $sub_btn = $('#subBtn');
     var $user_form = $('#userform');
     var $add_tips = $('#addTips');
-    var _name = $user_form.find('#name').val();
     var _pass = $user_form.find('#pas').val();
     var _confirm_pas = $user_form.find('#confirmPas').val();
+    var _email = $user_form.find('#email').val();
 
     var _flg = true;
-    if (!_name || _name == ''){
+    if (!_email || _email == ''){
       $add_tips.removeClass('hidden');
-      $add_tips.html('姓名不能为空');
+      $add_tips.html('邮箱不能为空');
       _flg = false;
     }else if (!_pass || _pass == ''){
       $add_tips.removeClass('hidden');
@@ -54,6 +54,10 @@ $(function(){
     }else if (_confirm_pas != _pass){
       $add_tips.removeClass('hidden');
       $add_tips.html('确认密码不匹配');
+      _flg = false;
+    }else if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(_email)){
+      $add_tips.removeClass('hidden');
+      $add_tips.html('邮箱格式不对');
       _flg = false;
     }
     if (_flg){

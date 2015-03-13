@@ -6,6 +6,7 @@ block content
     thead
       tr
         th 姓名
+        th 邮箱
         th 年龄
         th 职业
         th 爱好
@@ -14,6 +15,7 @@ block content
         each user in users
           tr
             td #{user.name}
+            td #{user.email}
             td #{user.age}
             td #{user.job}
             td #{user.hobby}

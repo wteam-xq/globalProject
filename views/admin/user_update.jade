@@ -15,6 +15,10 @@ block content
             .col-md-8
               input(type="text" id="name" name="name" value="#{user.name}").form-control
           .form-group
+            label.col-md-2.control-label 邮箱
+            .col-md-8
+              input(type="text" id="email" name="email" value="#{user.email}").form-control
+          .form-group
             label.col-md-2.control-label 年龄
             .col-md-8
               input(type="text" name="age" value="#{user.age}").form-control
@@ -37,12 +41,13 @@ block content
               input(type="password" id="confirmPas" name="confirmPas" value="").form-control
 
           .form-group
-            label.col-md-2.control-label 更新时间
+            label.col-md-2.control-label 上次更新时间
             .col-md-8
               if user.meta.updateAt
                 - var updateDate = user.meta.updateAt
                 - var _update_str = updateDate.getFullYear() + '/' + (updateDate.getMonth() + 1) + '/' + updateDate.getDate();
               .form-control #{_update_str}
+              //- .form-control #{moment(user.meta.updateAt).format("YYYY-MM-DD")}
 
           .form-group
             .col-md-1.col-md-offset-2

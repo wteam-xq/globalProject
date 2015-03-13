@@ -8,6 +8,8 @@ router.get('/', frontControl.index);
 /* GET index page. */
 router.get('/index', frontControl.index);
 
+router.get('/login', frontControl.login);
+
 /* 用户组首页. */
 router.get('/users/index', frontControl.index);
 

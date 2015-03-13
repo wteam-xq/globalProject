@@ -77,7 +77,8 @@ adminCtrol.addUserPost = function(req, res, next) {
     age: req.body.age,
     job: req.body.job,
     hobby: req.body.hobby,
-    password: req.body.pas
+    password: req.body.pas,
+    email: req.body.email
   };
   User.createInfo(userObj, function(err, user){
     if (err){
@@ -86,6 +87,23 @@ adminCtrol.addUserPost = function(req, res, next) {
       if (user && user.name){
         res.redirect('/admin/users');
       }
+    }
+  });
+}
+
+// 用户登录
+adminCtrol.login = function(req, res) {
+  var _email = req.body.email;
+  var _pas = req.body.pas;
+
+  User.findByEmail(_email, function(err, user){
+    if (err){
+      console.log('根据邮箱查找用户信息，出错');
+    }else{
+      // 密码比较
+      // var hash_pas = user.password;
+      // var com_result = bcrypt.compareSync('123123', hash_pas);
+      res.redirect('/admin/index');
     }
   });
 }
@@ -114,7 +132,8 @@ adminCtrol.updateUserPost = function(req, res) {
     age: req.body.age,
     job: req.body.job,
     hobby: req.body.hobby,
-    password: req.body.pas
+    password: req.body.pas,
+    email: req.body.email
   };
   User.updateInfo(id, userObj, function(err, updateCount){
     if (err){

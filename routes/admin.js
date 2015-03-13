@@ -35,5 +35,7 @@ router.route('/user/update')
 .post(adminControl.updateUserPost);
 // 删除用户
 router.post('/user/delete', adminControl.deleteUser);
+// 用户登录
+router.post('/user/login', adminControl.login);
 
 module.exports = router;

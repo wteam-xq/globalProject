@@ -14,5 +14,10 @@ webCtrol.index = function(req, res){
     }
   });
 }
+webCtrol.login = function(req, res){
+  res.render('login', { 
+    title: '用户登录' 
+  });
+}
 
 module.exports = webCtrol
