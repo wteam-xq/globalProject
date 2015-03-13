@@ -30,11 +30,19 @@ block content
           .form-group
             label.col-md-2.control-label 密码
             .col-md-8
-              input(type="password" id="pas" name="pas" value="#{user.password}").form-control
+              input(type="password" id="pas" name="pas" value="").form-control
           .form-group
             label.col-md-2.control-label 确认密码
             .col-md-8
-              input(type="password" id="confirmPas" name="confirmPas" value="#{user.password}").form-control
+              input(type="password" id="confirmPas" name="confirmPas" value="").form-control
+
+          .form-group
+            label.col-md-2.control-label 更新时间
+            .col-md-8
+              if user.meta.updateAt
+                - var updateDate = user.meta.updateAt
+                - var _update_str = updateDate.getFullYear() + '/' + (updateDate.getMonth() + 1) + '/' + updateDate.getDate();
+              .form-control #{_update_str}
 
           .form-group
             .col-md-1.col-md-offset-2

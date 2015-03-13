@@ -1,8 +1,7 @@
+var bcrypt = require('bcrypt-nodejs');
 var adminCtrol = {
 }
 var User = require('../models/User');
-
-
 
 // 后台接口原数据显示
 adminCtrol.testList = function(req, res) {
@@ -93,10 +92,14 @@ adminCtrol.addUserPost = function(req, res, next) {
 // 修改用户信息
 adminCtrol.updateUser = function(req, res) {
   var id = req.query.id;
+
   User.findById(id, function(err, user){
     if (err){
       console.log('根据Id查找用户信息，出错');
     }else{
+      // 密码比较
+      // var hash_pas = user.password;
+      // var com_result = bcrypt.compareSync('123123', hash_pas);
       res.render('admin/user_update', {
         title: 'admin',
         user: user
@@ -106,16 +109,16 @@ adminCtrol.updateUser = function(req, res) {
 }
 adminCtrol.updateUserPost = function(req, res) {
   var id = req.body.id;
-  var user = {
+  var userObj = {
     name: req.body.name,
     age: req.body.age,
     job: req.body.job,
     hobby: req.body.hobby,
     password: req.body.pas
   };
-  User.updateInfo(id, user, function(err, updateCount){
+  User.updateInfo(id, userObj, function(err, updateCount){
     if (err){
-      console.log('更新用户信息，出错');
+      console.log(err.error, '   错误码：' + updateCount);
     }else{
       res.redirect('/admin/users');
     }
