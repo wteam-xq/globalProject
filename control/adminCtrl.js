@@ -80,6 +80,7 @@ adminCtrol.addUserPost = function(req, res, next) {
     password: req.body.pas,
     email: req.body.email
   };
+  
   User.createInfo(userObj, function(err, user){
     if (err){
       console.log('新增用户信息错误');
@@ -156,6 +157,18 @@ adminCtrol.deleteUser = function(req, res) {
     }
   });
 }
+// 查询用户(暂时为通过邮箱查询)
+adminCtrol.searchUser = function(req, res) {
+  var email = req.query.email;
+  User.findByEmail(email, function(err, user){
+    if (err){
+      res.json({error:err});
+    }else{
+      res.json(user);
+    }
+  });
+}
+
 /**************************用户组end************************************/
 
 module.exports = adminCtrol

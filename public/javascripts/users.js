@@ -61,7 +61,20 @@ $(function(){
       _flg = false;
     }
     if (_flg){
-      $user_form.trigger('submit');
+      // 异步请求， 判断该邮箱是否被使用
+      $.get('/admin/user/search', {email: _email},  function(data){
+        if (data && data.error){
+          $add_tips.removeClass('hidden');
+          $add_tips.html('查询异常:' + data.error + '  请刷新重试。');
+        }else{
+          if (data && data._id){
+            $add_tips.removeClass('hidden');
+            $add_tips.html('邮箱已被使用，请重新填写');
+          }else{
+            $user_form.trigger('submit');
+          }
+        }
+      });
     }
   });
 

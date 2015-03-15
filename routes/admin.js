@@ -25,6 +25,8 @@ router.get('/resume/index', adminControl.resumeIndex);
 
 /* 用户组后台列表页 */
 router.get('/users', adminControl.userList);
+// 查询用户
+router.get('/user/search', adminControl.searchUser);
 // 添加用户. 
 router.route('/user/add')
 .get(adminControl.addUser)

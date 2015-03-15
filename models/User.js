@@ -84,7 +84,7 @@ UserSchema.statics = {
   },
   findByEmail: function(email, cb){
     return this
-      .find({email: email}).exec(cb);
+      .findOne({email: email}).exec(cb);
   },
   createInfo: function(user, cb){
     return this
