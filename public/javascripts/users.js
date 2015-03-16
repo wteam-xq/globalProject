@@ -77,5 +77,48 @@ $(function(){
       });
     }
   });
+  
+  // 用户登录提示
+  var $login_btn = $('#loginBtn');
+  $login_btn.on('click', function(){
+    // 登录表单
+    var $login_form = $('#loginForm');
+    // 登录信息
+    var $login_tips = $('#loginTips');
+    var _email = $login_form.find('#email').val();
+    var _pas = $login_form.find('#pas').val();
+    var _opt = {
+      email: _email,
+      pas: _pas
+    };
+    if (!_email || _email == ''){
+      $login_tips.removeClass('hidden');
+      $login_tips.html('邮箱不能为空');
+      return false;
+    }else if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(_email)){
+      $login_tips.removeClass('hidden');
+      $login_tips.html('邮箱格式不对');
+      return false;
+    }else if (!_pas || _pas == ''){
+      $login_tips.removeClass('hidden');
+      $login_tips.html('密码不能为空');
+      return false;
+    }
+    // 异步请求, 校验密码
+    $.get('/admin/user/login', _opt, function(data){
+      if (data.error){
+        $login_tips.removeClass('hidden');
+        $login_tips.html(data.error);
+      }else{
+        var _result = data.result;
+        if (_result || _result == 'true'){
+          $login_form.trigger('submit');
+        }else{
+          $login_tips.removeClass('hidden');
+          $login_tips.html('用户密码错误！');
+        }
+      }
+    });
 
+  });
 });

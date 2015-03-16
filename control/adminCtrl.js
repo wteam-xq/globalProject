@@ -94,19 +94,32 @@ adminCtrol.addUserPost = function(req, res, next) {
 
 // 用户登录
 adminCtrol.login = function(req, res) {
-  var _email = req.body.email;
-  var _pas = req.body.pas;
+  var _email = req.query.email;
+  var _pas = req.query.pas;
 
   User.findByEmail(_email, function(err, user){
     if (err){
-      console.log('根据邮箱查找用户信息，出错');
-    }else{
+      res.json({error: '根据邮箱查找用户信息，出错'});
+    }else if(user && user.password){
       // 密码比较
-      // var hash_pas = user.password;
-      // var com_result = bcrypt.compareSync('123123', hash_pas);
-      res.redirect('/admin/index');
+      var hash_pas = user.password;
+      var com_result = bcrypt.compareSync(_pas, hash_pas);
+      res.json({result: com_result});
+    }else{
+      res.json({error: '用户不存在'});
     }
   });
+}
+adminCtrol.loginPost = function(req, res) {
+  var _email = req.body.email;
+  var _pas = req.body.pas;
+
+  var _opt = {
+    email: _email,
+    password: _pas
+  };
+  console.log(_opt);
+  res.redirect('/login');
 }
 // 修改用户信息
 adminCtrol.updateUser = function(req, res) {

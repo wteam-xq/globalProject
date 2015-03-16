@@ -25,7 +25,7 @@ router.get('/resume/index', adminControl.resumeIndex);
 
 /* 用户组后台列表页 */
 router.get('/users', adminControl.userList);
-// 查询用户
+// 查询用户(暂根据邮箱查询)
 router.get('/user/search', adminControl.searchUser);
 // 添加用户. 
 router.route('/user/add')
@@ -38,6 +38,8 @@ router.route('/user/update')
 // 删除用户
 router.post('/user/delete', adminControl.deleteUser);
 // 用户登录
-router.post('/user/login', adminControl.login);
+router.route('/user/login')
+.get(adminControl.login)
+.post(adminControl.loginPost);
 
 module.exports = router;

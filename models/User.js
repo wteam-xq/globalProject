@@ -34,23 +34,6 @@ UserSchema.pre('save', function(next){
   }else{
     user.meta.updateAt = Date.now();
   } 
-  // 异步加密 asyn
-  // bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
-  //   console.log(err);
-  //   console.log(salt);
-  //   if (err) {
-  //     return next(err);
-  //   }
-  //   bcrypt.hash(user.password, salt, function(err, hash){
-  //     console.log(err);
-  //     console.log(hash);
-  //     if (err) {
-  //       return next(err);
-  //     }
-  //     user.password = hash;
-  //     next();
-  //   });
-  // });
   user.password = hashStr(user.password);
   next();
 })
