@@ -9,6 +9,9 @@ a {
 .grey{
   background-color: #ccc !important;
 }
+.clear-right{
+  margin-right: 0px !important;
+}
 
 /*站点间距*/
 .mright-15{

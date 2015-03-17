@@ -1,5 +1,3 @@
-// 密码加密
-var bcrypt = require('bcrypt-nodejs');
 var adminCtrol = {
 }
 //  数据库model
@@ -11,7 +9,7 @@ var moment = require('moment');
 adminCtrol.testList = function(req, res) {
   User.fetch(function(err, users){
     if (err){
-      console.log('查询异常');
+      res.json({error: '查询异常'});
     }else{
       res.json(users);
     }
@@ -20,7 +18,11 @@ adminCtrol.testList = function(req, res) {
 
 // 后台首页菜单
 adminCtrol.adminIndex = function(req, res) {
-  res.render('admin/index', { title: 'admin_index' });
+  var user = null;
+  if (req.session && req.session.user){
+    user = req.session.user
+  }
+  res.render('admin/index', { title: 'admin_index', user: user});
 }
 
 /**************************三国杀************************************/
@@ -96,35 +98,6 @@ adminCtrol.addUserPost = function(req, res, next) {
   });
 }
 
-// 用户登录, 用户邮箱、密码校验
-adminCtrol.login = function(req, res) {
-  var _email = req.query.email;
-  var _pas = req.query.pas;
-
-  User.findByEmail(_email, function(err, user){
-    if (err){
-      res.json({error: '根据邮箱查找用户信息，出错'});
-    }else if(user && user.password){
-      // 密码比较
-      var hash_pas = user.password;
-      var com_result = bcrypt.compareSync(_pas, hash_pas);
-      res.json({result: com_result});
-    }else{
-      res.json({error: '用户不存在'});
-    }
-  });
-}
-adminCtrol.loginPost = function(req, res) {
-  var _email = req.body.email;
-  var _pas = req.body.pas;
-
-  var _opt = {
-    email: _email,
-    password: _pas
-  };
-  
-  res.redirect('/admin');
-}
 // 修改用户信息
 adminCtrol.updateUser = function(req, res) {
   var id = req.query.id;
@@ -167,7 +140,6 @@ adminCtrol.deleteUser = function(req, res) {
   var id = req.body.id;
   User.deleteInfo(id, function(err, updateCount){
     if (err){
-      // console.log('删除用户信息,出错');
       res.json({error:err});
     }else{
       res.json({success: true});

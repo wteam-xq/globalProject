@@ -3,6 +3,7 @@ var router = express.Router();
 var adminControl = require('../control/adminCtrl');
 
 router.get('/test', adminControl.testList);
+router.get('/*', checkLogin);
 
 // 后台首页菜单
 router.get('/', adminControl.adminIndex);
@@ -37,9 +38,16 @@ router.route('/user/update')
 .post(adminControl.updateUserPost);
 // 删除用户
 router.post('/user/delete', adminControl.deleteUser);
-// 用户登录
-router.route('/user/login')
-.get(adminControl.login)
-.post(adminControl.loginPost);
+
+
+//检查用户是否已登录
+function checkLogin(req, res, next){
+  // 用户登录不检查
+  if (req.session && req.session.user){
+    next();
+  }else{
+    res.redirect('/login');
+  }
+}
 
 module.exports = router;

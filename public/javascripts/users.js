@@ -122,7 +122,7 @@ $(function(){
       return false;
     }
     // 异步请求, 校验密码
-    $.get('/admin/user/login', _opt, function(data){
+    $.get('/user/login', _opt, function(data){
       if (data.error){
         $login_tips.removeClass('hidden');
         $login_tips.html(data.error);

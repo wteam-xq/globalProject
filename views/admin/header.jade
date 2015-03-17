@@ -1,0 +1,20 @@
+// 后台导航条
+.navbar.navbar-inverse(role='navigation')
+  .navbar-header
+    a.navbar-brand(href='#') wteam-xq
+  ul.nav.navbar-nav
+    li.active
+      a(href='#') 用户组
+    li
+      a(href='#') 三国杀FAQ 
+    li
+      a(href='#') 个人简历
+  ul.nav.navbar-nav.navbar-right.clear-right
+    if user
+      li
+        a(href='#') 欢迎您，#{user.name}
+      li
+        a(href='/user/logout') 注销
+    else
+      li
+        a(href='/login') 登录
