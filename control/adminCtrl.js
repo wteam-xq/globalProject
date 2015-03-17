@@ -1,7 +1,11 @@
+// 密码加密
 var bcrypt = require('bcrypt-nodejs');
 var adminCtrol = {
 }
+//  数据库model
 var User = require('../models/User');
+// 日期格式化
+var moment = require('moment');
 
 // 后台接口原数据显示
 adminCtrol.testList = function(req, res) {
@@ -92,7 +96,7 @@ adminCtrol.addUserPost = function(req, res, next) {
   });
 }
 
-// 用户登录
+// 用户登录, 用户邮箱、密码校验
 adminCtrol.login = function(req, res) {
   var _email = req.query.email;
   var _pas = req.query.pas;
@@ -118,8 +122,8 @@ adminCtrol.loginPost = function(req, res) {
     email: _email,
     password: _pas
   };
-  console.log(_opt);
-  res.redirect('/login');
+  
+  res.redirect('/admin');
 }
 // 修改用户信息
 adminCtrol.updateUser = function(req, res) {
@@ -129,9 +133,9 @@ adminCtrol.updateUser = function(req, res) {
     if (err){
       console.log('根据Id查找用户信息，出错');
     }else{
-      // 密码比较
-      // var hash_pas = user.password;
-      // var com_result = bcrypt.compareSync('123123', hash_pas);
+      // 日期格式化
+      var _date_str = moment(user.meta.updateAt).format('YYYY-MM-DD HH:mm:ss');
+      user.updateAt = _date_str
       res.render('admin/user_update', {
         title: 'admin',
         user: user

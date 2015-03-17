@@ -43,15 +43,12 @@ block content
           .form-group
             label.col-md-2.control-label 上次更新时间
             .col-md-8
-              if user.meta.updateAt
-                - var updateDate = user.meta.updateAt
-                - var _update_str = updateDate.getFullYear() + '/' + (updateDate.getMonth() + 1) + '/' + updateDate.getDate();
-              .form-control #{_update_str}
+              .form-control.grey #{user.updateAt}
               //- .form-control #{moment(user.meta.updateAt).format("YYYY-MM-DD")}
 
           .form-group
             .col-md-1.col-md-offset-2
-              button(type="button" id='commitBtn').btn.btn-primary 提交添加
+              button(type="button" id='commitBtn' data-type='update').btn.btn-primary 提交添加
               button.hidden(type="submit" id='subBtn').btn.btn-primary 提交添加
             .col-md-2
               a(href="/admin/users").btn.btn-primary 返回

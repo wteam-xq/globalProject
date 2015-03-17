@@ -1,5 +1,19 @@
 // 用户列表脚本
 $(function(){
+  // 公用方法， 邮箱校验
+  function validEmail($tipsDom, str){
+    var _result = false;
+    if (!str || str == ''){
+      $tipsDom.removeClass('hidden');
+      $tipsDom.html('邮箱不能为空');
+    }else if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(str)){
+      $tipsDom.removeClass('hidden');
+      $tipsDom.html('邮箱格式不对');
+    }else{
+      _result = true;
+    }
+    return _result;
+  }
 
   var $remove_btn = $('.removeUser');
   var $remove_submit = $('#removeSubmit');
@@ -41,12 +55,15 @@ $(function(){
     var _pass = $user_form.find('#pas').val();
     var _confirm_pas = $user_form.find('#confirmPas').val();
     var _email = $user_form.find('#email').val();
+    // 按钮自身
+    var $this = $(this);
+    // 按钮类型 ： 新增、 更新
+    var _type = '';
 
     var _flg = true;
-    if (!_email || _email == ''){
-      $add_tips.removeClass('hidden');
-      $add_tips.html('邮箱不能为空');
-      _flg = false;
+    _flg = validEmail($add_tips, _email);
+    if (!_flg){
+      return false;
     }else if (!_pass || _pass == ''){
       $add_tips.removeClass('hidden');
       $add_tips.html('密码不能为空');
@@ -55,26 +72,29 @@ $(function(){
       $add_tips.removeClass('hidden');
       $add_tips.html('确认密码不匹配');
       _flg = false;
-    }else if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(_email)){
-      $add_tips.removeClass('hidden');
-      $add_tips.html('邮箱格式不对');
-      _flg = false;
     }
     if (_flg){
-      // 异步请求， 判断该邮箱是否被使用
-      $.get('/admin/user/search', {email: _email},  function(data){
-        if (data && data.error){
-          $add_tips.removeClass('hidden');
-          $add_tips.html('查询异常:' + data.error + '  请刷新重试。');
-        }else{
-          if (data && data._id){
+      // 更新用户，不用判断
+      _type = $this.attr('data-type');
+      if (_type && _type == 'update'){
+        $user_form.trigger('submit');
+      }else{
+        // 异步请求， 判断该邮箱是否被使用
+        $.get('/admin/user/search', {email: _email},  function(data){
+          if (data && data.error){
             $add_tips.removeClass('hidden');
-            $add_tips.html('邮箱已被使用，请重新填写');
+            $add_tips.html('查询异常:' + data.error + '  请刷新重试。');
           }else{
-            $user_form.trigger('submit');
+            if (data && data._id){
+              $add_tips.removeClass('hidden');
+              $add_tips.html('邮箱已被使用，请重新填写');
+            }else{
+              $user_form.trigger('submit');
+            }
           }
-        }
-      });
+        });
+      }
+      
     }
   });
   
@@ -87,17 +107,14 @@ $(function(){
     var $login_tips = $('#loginTips');
     var _email = $login_form.find('#email').val();
     var _pas = $login_form.find('#pas').val();
+    var _flg = false;
     var _opt = {
       email: _email,
       pas: _pas
     };
-    if (!_email || _email == ''){
-      $login_tips.removeClass('hidden');
-      $login_tips.html('邮箱不能为空');
-      return false;
-    }else if (!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(_email)){
-      $login_tips.removeClass('hidden');
-      $login_tips.html('邮箱格式不对');
+
+    _flg = validEmail($login_tips, _email);
+    if (!_flg){
       return false;
     }else if (!_pas || _pas == ''){
       $login_tips.removeClass('hidden');
@@ -119,6 +136,6 @@ $(function(){
         }
       }
     });
+  });// end click event
 
-  });
 });
