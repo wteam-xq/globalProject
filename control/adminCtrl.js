@@ -18,11 +18,7 @@ adminCtrol.testList = function(req, res) {
 
 // 后台首页菜单
 adminCtrol.adminIndex = function(req, res) {
-  var user = null;
-  if (req.session && req.session.user){
-    user = req.session.user
-  }
-  res.render('admin/index', { title: 'admin_index', user: user});
+  res.render('admin/index', { title: 'admin_index'});
 }
 
 /**************************三国杀************************************/
@@ -146,6 +142,7 @@ adminCtrol.deleteUser = function(req, res) {
     }
   });
 }
+
 // 查询用户(暂时为通过邮箱查询)
 adminCtrol.searchUser = function(req, res) {
   var email = req.query.email;

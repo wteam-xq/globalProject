@@ -1,12 +1,7 @@
 extends ../layout
 
 block content
-  .row
-    .col-md-8
-    .col-md-4.text-right
-      a(href="/users/index").btn.btn-primary.mright-15 查看首页
-      a(href="/admin/index").btn.btn-primary 返回
-
+  include header
   //- 主页面 
   .mainmenu.main-panel#mainmenu
     .menu-nav.row
