@@ -28,14 +28,7 @@ adminCtrol.tkdList = function(req, res) {
       title: '三国杀列表页' 
     });
 };
-// 增加用户
-adminCtrol.addTkdRule = function(req, res) {
-  res.render('admin/tkd_rule_add', { title: '规则添加' });
-};
-// 增加用户
-adminCtrol.updateTkdRule = function(req, res) {
-  res.render('admin/tkd_rule_add', { title: '规则添加' });
-};
+
 
 /**************************三国杀end**********************************/
 

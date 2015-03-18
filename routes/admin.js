@@ -12,12 +12,6 @@ router.get('/index', adminControl.adminIndex);
 /*三国杀后台列表页*/
 router.get('/tkd', adminControl.tkdList);
 router.get('/tkd/index', adminControl.tkdList);
-// 添加规则
-router.route('/tkd/addRule')
-.get(adminControl.addTkdRule);
-// 更新规则
-router.route('/tkd/updateRule')
-.get(adminControl.updateTkdRule);
 
 /*个人简历后台列表页*/
 router.get('/resume', adminControl.resumeIndex);

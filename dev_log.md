@@ -2,7 +2,9 @@
 
 #### 开发计划：
 * 03.15 - 03.21 1.完成用户登录； 2.三大块前后台基本页面UI。 3.后台啊规则页添加 百度编辑器， 弹出框垂直居中。
-
+* 待优化代码： 
+  * 1.登录时 loading提示； 
+  * 2.将用户更新、用户添加页面整合进 用户列表页面（改为异步拉取数据）。
 
 #### 开发日志
 * 03-11 打开 microBlog 项目， 出现 “Please ensure that you set the default write concern for the database”提示！！
@@ -30,3 +32,5 @@ module.exports = new Db(
 
 * 03-17  express-session 模块， 保存的内容req.session.xxx, nodejs 重启后消失。。。
 * 方案： 将session 数据存在cookies 、 内存 、redis 或 mongodb中；
+
+* 03-18 百度编辑器导入后台问题：to be continue...

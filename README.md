@@ -2,7 +2,7 @@
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
 * 技术点： mongodb express bootstrap jquery
 
-#### 图片资源百度网盘地址：[图片资源](http://pan.baidu.com/s/1i35oVFf) （更新ing...）
+#### 图片资源百度网盘地址：[依赖库、图片资源](http://pan.baidu.com/s/1o67MPQi) （更新ing...）
 
 #### 本地部署（win8 64bit为例）
 * 安装nodeJs
@@ -34,6 +34,7 @@ db.createCollection("users")
   ```Bash
   bower install bootstrap
   ```
+* 如果不想安装、使用bower， 可以直接拿上述网盘里的文件夹放入项目对应目录下。
 
 * 进入工程目录 cmd: npm install 安装node_modules的依赖模块
 ```Bash

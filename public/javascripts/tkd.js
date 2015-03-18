@@ -51,8 +51,36 @@ $(function(){
     $modal_dialog.css({'margin': m_top + 'px auto'});
   });
 
+  // 二级页面逻辑
+  var $main_menu = $('#mainmenu');
+  var $rule_add_btn = $('#rule-add'); 
+  var $sub_panel = $('#sub-panel');
+  $rule_add_btn.on('click', function(){
+    var $this = $(this);
+    $sub_panel.find('.row').hide();
+    $sub_panel.show();
+    $sub_panel.find('.add-panel').show();
+    $main_menu.hide();
+  });
+  $main_menu.find('.rule-update').on('click', function(){
+    var $this = $(this);
+    var _id = $this.attr('data-id');
+    $sub_panel.find('.row').hide();
+    $sub_panel.show();
+    $sub_panel.find('.update-panel').show();
+    $main_menu.hide();
+  });
+  $sub_panel.find('.back-main').on('click', function(){
+    var $this = $(this);
+    var $parent_panel = $this.parents('.panel');
+    $sub_panel.find('.row').hide();
+    $main_menu.show();
+  });
+
+  // 百度编辑器初始化
+  $Ue = UE.getEditor('add-content');
   // 是弹出框居中。。。
-    // var $modal_dialog = $(this.$element[0]).find('.modal-dialog');
-    // var m_top = ( $(document).height() - $modal_dialog.height() )/2;
-    // $modal_dialog.css({'margin': m_top + 'px auto'});
+  // var $modal_dialog = $(this.$element[0]).find('.modal-dialog');
+  // var m_top = ( $(window).height() - $modal_dialog.height() )/2;
+  // $modal_dialog.css({'margin': m_top + 'px auto'});
 });

@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-color: #ccc !important;*/
 }
 
 a {
@@ -11,6 +12,9 @@ a {
 }
 .clear-right{
   margin-right: 0px !important;
+}
+.unvisible{
+  display: none;
 }
 
 /*站点间距*/
@@ -106,4 +110,16 @@ a {
   padding: 0px !important;
   text-align: center !important;
   border-color: #357ebd !important;
+}
+
+
+.sub-main{
+  text-align: left;
+}
+/*百度编辑器*/
+.ue-group{
+  height: 405px;
+}
+.ue-container{
+  height: 300px;
 }

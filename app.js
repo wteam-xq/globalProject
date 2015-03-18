@@ -43,7 +43,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
-// 用户登录信息
+// 用户登录信息记录
 app.use(function(req, res, next) {
     if (req.session && req.session.user){
         app.locals.user = req.session.user
