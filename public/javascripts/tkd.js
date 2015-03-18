@@ -79,6 +79,7 @@ $(function(){
 
   // 百度编辑器初始化
   $Ue = UE.getEditor('add-content');
+  $Ue2 = UE.getEditor('update-content');
   // 是弹出框居中。。。
   // var $modal_dialog = $(this.$element[0]).find('.modal-dialog');
   // var m_top = ( $(window).height() - $modal_dialog.height() )/2;

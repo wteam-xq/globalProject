@@ -93,7 +93,7 @@ block content
             a.back-main.btn.btn-primary 返回
 
     .row.unvisible.update-panel
-      h3.text-center 规则更新
+      h4.text-center 规则更新
       br
       form.form-horizontal(method="POST" action="tkdRuelUpdate" name='userform')
         .form-group
@@ -108,10 +108,11 @@ block content
           label.col-md-1.control-label 图标
           .col-md-10
             input(type="file" id="ico" name="ico").form-control
-        .form-group
+        .form-group.ue-group
           label.col-md-1.control-label 详情
           .col-md-10
-            textarea(id="update-content" name="content").form-control
+            // 调用百度编辑器
+            script(id="update-content" name="content" class="ue-container" type="text/plain")
 
         .form-group
           .col-md-1.col-md-offset-1
