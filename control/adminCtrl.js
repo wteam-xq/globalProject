@@ -60,10 +60,6 @@ adminCtrol.userList = function(req, res) {
   });
 };
 
-// 增加用户
-adminCtrol.addUser = function(req, res) {
-  res.render('admin/user_add', { title: 'user_add' });
-}
 // 提交新增用户请求
 adminCtrol.addUserPost = function(req, res, next) {
   var userObj = {};
@@ -93,15 +89,12 @@ adminCtrol.updateUser = function(req, res) {
 
   User.findById(id, function(err, user){
     if (err){
-      console.log('根据Id查找用户信息，出错');
+      res.json({error: '根据Id查找用户信息，出错'});
     }else{
       // 日期格式化
       var _date_str = moment(user.meta.updateAt).format('YYYY-MM-DD HH:mm:ss');
       user.updateAt = _date_str
-      res.render('admin/user_update', {
-        title: 'admin',
-        user: user
-      });
+      res.json(user);
     }
   });
 }

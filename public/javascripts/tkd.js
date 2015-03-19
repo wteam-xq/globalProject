@@ -72,7 +72,6 @@ $(function(){
   });
   $sub_panel.find('.back-main').on('click', function(){
     var $this = $(this);
-    var $parent_panel = $this.parents('.panel');
     $sub_panel.find('.row').hide();
     $main_menu.show();
   });

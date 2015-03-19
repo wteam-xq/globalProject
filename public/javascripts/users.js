@@ -46,12 +46,59 @@ $(function(){
     $selected_id.val('');
   });
 
+  // 一级页面
+  var $main_panel = $('#main-panel');
+  // 二级页面
+  var $sub_panel = $('#sub-panel');
+  $main_panel.find('#add-user').on('click', function(){
+    var $this = $(this);
+    $sub_panel.find('.row').hide();
+    $sub_panel.show();
+    $sub_panel.find('.add-panel').show();
+    $main_panel.hide();
+  });
+  $sub_panel.find('.back-main').on('click', function(){
+    var $this = $(this);
+    $sub_panel.find('.row').hide();
+    $main_panel.show();
+  });
+  // 更新按钮 
+  $main_panel.find('.update-link').on('click', function(){
+    var $this = $(this);
+    var _id = $this.attr('data-id');
+    var $ajax_tips = $this.next('span');
+    var $update_panel = $sub_panel.find('.update-panel');
+    var $add_tips = $update_panel.find('#update-tips');
+    var $update_form = $update_panel.find('form');
+    $this.hide();
+    $ajax_tips.show();
+
+    // 异步请求， 获得用户信息
+    $.get('/admin/user/search', {id: _id},  function(data){
+      if (data && data.error){
+        $add_tips.removeClass('hidden');
+        $add_tips.html('查询异常:' + data.error + '  请刷新重试。');
+      }else{
+        $sub_panel.find('.row').hide();
+        $sub_panel.show();
+        $sub_panel.find('.update-panel').show();
+        $main_panel.hide();
+
+        $this.show();
+        $ajax_tips.hide();
+        // 表单值设置
+        // $update_form
+      }
+    });
+  });
+
+
   // 用户添加校验
-  var $commit_btn = $('#commitBtn');
+  var $commit_btn = $sub_panel.find('.commitBtn');
   $commit_btn.on('click', function(){
-    var $sub_btn = $('#subBtn');
-    var $user_form = $('#userform');
-    var $add_tips = $('#addTips');
+    var $this = $(this);
+    var $user_form = $this.parents('form');
+    var $add_tips = $user_form.prev('.alert');
     var _pass = $user_form.find('#pas').val();
     var _confirm_pas = $user_form.find('#confirmPas').val();
     var _email = $user_form.find('#email').val();

@@ -24,7 +24,6 @@ router.get('/users', adminControl.userList);
 router.get('/user/search', adminControl.searchUser);
 // 添加用户. 
 router.route('/user/add')
-.get(adminControl.addUser)
 .post(adminControl.addUserPost);
 // 更新用户 
 router.route('/user/update')
