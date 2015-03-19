@@ -4,6 +4,7 @@ var adminCtrol = {
 var User = require('../models/User');
 // 日期格式化
 var moment = require('moment');
+var _ = require('underscore');
 
 // 后台接口原数据显示
 adminCtrol.testList = function(req, res) {
@@ -93,8 +94,12 @@ adminCtrol.updateUser = function(req, res) {
     }else{
       // 日期格式化
       var _date_str = moment(user.meta.updateAt).format('YYYY-MM-DD HH:mm:ss');
-      user.updateAt = _date_str
-      res.json(user);
+      var tempUser = {
+        updateAt: _date_str
+      };
+      _.extend(tempUser, user);
+
+      res.json(tempUser);
     }
   });
 }

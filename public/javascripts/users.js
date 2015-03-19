@@ -74,7 +74,7 @@ $(function(){
     $ajax_tips.show();
 
     // 异步请求， 获得用户信息
-    $.get('/admin/user/search', {id: _id},  function(data){
+    $.get('user/update', {id: _id},  function(data){
       if (data && data.error){
         $add_tips.removeClass('hidden');
         $add_tips.html('查询异常:' + data.error + '  请刷新重试。');
