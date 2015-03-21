@@ -16,7 +16,10 @@ a {
 .unvisible{
   display: none;
 }
-
+.loading-ico{
+  width: 45px;
+  height: 45px;
+}
 /*站点间距*/
 .mright-15{
   margin-right: 15px;
@@ -111,11 +114,10 @@ a {
   text-align: center !important;
   border-color: #357ebd !important;
 }
-
-
 .sub-main{
   text-align: left;
 }
+
 /*百度编辑器*/
 .ue-group{
   height: 405px;

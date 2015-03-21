@@ -86,8 +86,15 @@ $(function(){
 
         $this.show();
         $ajax_tips.hide();
+        var User = data.user;
         // 表单值设置
-        // $update_form
+        $update_form.find('#id').val(User._id);
+        $update_form.find('#name').val(User.name);
+        $update_form.find('#email').val(User.email);
+        $update_form.find('#age').val(User.age);
+        $update_form.find('#job').val(User.job);
+        $update_form.find('#hobby').val(User.hobby);
+        $update_form.find('#last-update').html(data.updateAt);
       }
     });
   });
@@ -168,8 +175,11 @@ $(function(){
       $login_tips.html('密码不能为空');
       return false;
     }
+    var $loading_ico = $('#loading-ico');
+    $loading_ico.show();
     // 异步请求, 校验密码
     $.get('/user/login', _opt, function(data){
+      $loading_ico.hide();
       if (data.error){
         $login_tips.removeClass('hidden');
         $login_tips.html(data.error);

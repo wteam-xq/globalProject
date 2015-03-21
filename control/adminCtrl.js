@@ -94,11 +94,7 @@ adminCtrol.updateUser = function(req, res) {
     }else{
       // 日期格式化
       var _date_str = moment(user.meta.updateAt).format('YYYY-MM-DD HH:mm:ss');
-      var tempUser = {
-        updateAt: _date_str
-      };
-      _.extend(tempUser, user);
-
+      var tempUser = {updateAt: _date_str, user: user};
       res.json(tempUser);
     }
   });
@@ -116,6 +112,7 @@ adminCtrol.updateUserPost = function(req, res) {
   User.updateInfo(id, userObj, function(err, updateCount){
     if (err){
       console.log(err.error, '   错误码：' + updateCount);
+      res.redirect('/admin/users');
     }else{
       res.redirect('/admin/users');
     }
