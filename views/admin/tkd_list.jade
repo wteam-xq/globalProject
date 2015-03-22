@@ -66,6 +66,13 @@ block content
     .row.unvisible.add-panel
       h4.text-center 规则添加
       br
+      //- 隐藏表单 用于上传图片
+      form.hidden(method='POST' action='' name='uploadform' id='upload-form')
+        .form-group
+          .col-md-10
+            input(type="file" id="ico" name="ico").form-control
+            input(type='submit' id='upload-submit')
+
       form.form-horizontal(method="POST" action="tkdRuelAdd" name='userform')
         .form-group
           label.col-md-1.control-label 标题

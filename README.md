@@ -4,7 +4,7 @@
 
 #### 图片资源百度网盘地址：[依赖库、图片资源](http://pan.baidu.com/s/1o67MPQi) （更新ing...）
 
-#### 本地部署（win8 64bit为例）
+#### 本地部署（win7 64bit为例）
 * 安装nodeJs
 * 安装mongodb（最好配置成window服务），生成globalDb数据库、生成users表
   * 手动安装mongodb, 下载地址： [mongodb下载](http://pan.baidu.com/s/1qWG5Lr2)
