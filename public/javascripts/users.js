@@ -14,6 +14,9 @@ $(function(){
     }
     return _result;
   }
+  // 路径导航条
+  var $admin_crumb = $('#admin-crumb');
+  var $to_user = $('#to-user');
 
   var $remove_btn = $('.removeUser');
   var $remove_submit = $('#removeSubmit');
@@ -56,11 +59,16 @@ $(function(){
     $sub_panel.show();
     $sub_panel.find('.add-panel').show();
     $main_panel.hide();
+    // 导航条出现
+    $admin_crumb.find('.active:first').html('添加用户');
+    $admin_crumb.show();
   });
   $sub_panel.find('.back-main').on('click', function(){
     var $this = $(this);
     $sub_panel.find('.row').hide();
     $main_panel.show();
+    // 导航条隐藏
+    $admin_crumb.hide();
   });
   // 更新按钮 
   $main_panel.find('.update-link').on('click', function(){
@@ -72,6 +80,9 @@ $(function(){
     var $update_form = $update_panel.find('form');
     $this.hide();
     $ajax_tips.show();
+    // 导航条出现
+    $admin_crumb.find('.active:first').html('更新用户');
+    $admin_crumb.show();
 
     // 异步请求， 获得用户信息
     $.get('user/update', {id: _id},  function(data){
@@ -194,5 +205,10 @@ $(function(){
       }
     });
   });// end click event
+
+  // 路径导航条事件
+  $to_user.on('click', function(){
+    $sub_panel.find('.back-main').trigger('click');
+  });
 
 });

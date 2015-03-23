@@ -1,6 +1,9 @@
 // 用户列表脚本
 $(function(){
-
+  // 路径导航条
+  var $admin_crumb = $('#admin-crumb');
+  var $to_tkd = $('#to-tkd');
+  
   // 删除 确认弹出框
   var $confirm_dialog = $('#removeConfirm');
   var $remove_submit = $('#removeSubmit');
@@ -13,7 +16,7 @@ $(function(){
   // 存储待删除用户ID隐藏域
   var $selected_id = $rule_cont.find('#selectId');
   
-
+  // 删除规则
   $remove_btn.on('click', function(){
     var $this = $(this);
     var _id = $this.attr('data-id');
@@ -43,7 +46,7 @@ $(function(){
     $selected_id.val('');
   });
 
-  // 测试 bootstrap 居中
+  // bootstrap 居中
   $confirm_dialog.on('shown.bs.modal', function(){
     var $this = $(this);
     var $modal_dialog = $this.find('.modal-dialog');
@@ -61,6 +64,9 @@ $(function(){
     $sub_panel.show();
     $sub_panel.find('.add-panel').show();
     $main_menu.hide();
+    // 导航条出现
+    $admin_crumb.find('.active:first').html('添加规则');
+    $admin_crumb.show();
   });
   $main_menu.find('.rule-update').on('click', function(){
     var $this = $(this);
@@ -69,18 +75,24 @@ $(function(){
     $sub_panel.show();
     $sub_panel.find('.update-panel').show();
     $main_menu.hide();
+    // 导航条出现
+    $admin_crumb.find('.active:first').html('更新规则');
+    $admin_crumb.show();
   });
   $sub_panel.find('.back-main').on('click', function(){
     var $this = $(this);
     $sub_panel.find('.row').hide();
     $main_menu.show();
+    // 导航条隐藏
+    $admin_crumb.hide();
   });
 
   // 百度编辑器初始化
   $Ue = UE.getEditor('add-content');
   $Ue2 = UE.getEditor('update-content');
-  // 是弹出框居中。。。
-  // var $modal_dialog = $(this.$element[0]).find('.modal-dialog');
-  // var m_top = ( $(window).height() - $modal_dialog.height() )/2;
-  // $modal_dialog.css({'margin': m_top + 'px auto'});
+  
+  // 路径导航条事件
+  $to_tkd.on('click', function(){
+    $sub_panel.find('.back-main').trigger('click');
+  });
 });

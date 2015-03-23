@@ -61,11 +61,18 @@ block content
             button(type="button" data-dismiss="modal" id="cancelRemove").btn.btn-default 关闭
             button(type="button" id="removeSubmit").btn.btn-primary 确定
 
+  //- 面包屑导航条
+  ol.breadcrumb.admin-crumb.unvisible(id='admin-crumb')
+    li
+      a(href='/admin') 首页
+    li
+      a(href='javascript:void(0);' id='to-tkd') 三国杀FAQ
+    li.active 规则添加
+
   //- 二级页面
   .container.unvisible#sub-panel
     .row.unvisible.add-panel
-      h4.text-center 规则添加
-      br
+      
       //- 隐藏表单 用于上传图片
       form.hidden(method='POST' action='' name='uploadform' id='upload-form')
         .form-group
@@ -101,8 +108,6 @@ block content
             a.back-main.btn.btn-primary 返回
 
     .row.unvisible.update-panel
-      h4.text-center 规则更新
-      br
       form.form-horizontal(method="POST" action="tkdRuelUpdate" name='userform')
         .form-group
           label.col-md-1.control-label 标题
