@@ -12,6 +12,8 @@ router.get('/index', adminControl.adminIndex);
 /*三国杀后台列表页*/
 router.get('/tkd', adminControl.tkdList);
 router.get('/tkd/index', adminControl.tkdList);
+// 上传图标
+router.post('/upload/ico', adminControl.uploadIco);
 
 /*个人简历后台列表页*/
 router.get('/resume', adminControl.resumeIndex);

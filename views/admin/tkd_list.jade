@@ -69,17 +69,16 @@ block content
       a(href='javascript:void(0);' id='to-tkd') 三国杀FAQ
     li.active 规则添加
 
+  //- 隐藏上传图控件, data-type rule-add:  新增规则， rule-update： 更新规则
+  form.hidden(method='POST' name='uploadform' id='upload-form' data-type='rule-add')
+    .form-group
+      .col-md-10
+        input(type="file" id="upload-file" name="ico").form-control
+
   //- 二级页面
   .container.unvisible#sub-panel
     .row.unvisible.add-panel
       
-      //- 隐藏表单 用于上传图片
-      form.hidden(method='POST' action='' name='uploadform' id='upload-form')
-        .form-group
-          .col-md-10
-            input(type="file" id="ico" name="ico").form-control
-            input(type='submit' id='upload-submit')
-
       form.form-horizontal(method="POST" action="tkdRuelAdd" name='userform')
         .form-group
           label.col-md-1.control-label 标题
@@ -91,9 +90,13 @@ block content
             input(type="text" id="desc" name="desc").form-control
         .form-group
           label.col-md-1.control-label 图标
-          .col-md-10
-            input(type="file" id="ico" name="ico").form-control
-            //- .btn.btn-primary(id="ico" name="ico").form-control 上传图标
+          .col-md-2
+            .btn.btn-primary(class="upload-ico" data-type="rule-add").form-control 点击上传图标
+          .col-md-2
+            .upload-tips.unvisible 图标上传提示
+          .col-md-6
+            .upload-pro.unvisible
+              .progress-bar
         .form-group.ue-group
           label.col-md-1.control-label 详情
           .col-md-10
@@ -119,8 +122,12 @@ block content
             input(type="text" id="desc" name="desc").form-control
         .form-group
           label.col-md-1.control-label 图标
-          .col-md-10
-            input(type="file" id="ico" name="ico").form-control
+          .col-md-2
+            .btn.btn-primary(class="upload-ico" name="ico").form-control 点击上传图标
+          .col-md-2
+            .rule-update-tips.unvisible 
+          .col-md-6
+            .rule-update-pro.unvisible
         .form-group.ue-group
           label.col-md-1.control-label 详情
           .col-md-10
