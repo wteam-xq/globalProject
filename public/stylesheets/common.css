@@ -131,3 +131,12 @@ a {
 .add-panel{
   position: relative;
 }
+.upload-tips{
+  line-height: 34px
+}
+.upload-pro{
+  height: 34px !important;
+}
+.progress-bar{
+  line-height:  34px !important;
+}

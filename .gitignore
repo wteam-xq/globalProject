@@ -5,3 +5,4 @@ bower_components/*
 public/components/*
 public/images/*
 public/upload_imgs/*
+tmp/*

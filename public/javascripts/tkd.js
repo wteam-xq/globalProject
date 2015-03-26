@@ -102,20 +102,26 @@ $(function(){
   var $upload_pro = null;
   var $file_dom = $upload_form.find('#upload-file');
   // 触发上传控件的按钮
-  var $form_ico = $('#sub-panel').find('input.upload-ico');
+  var $form_ico = $('#sub-panel').find('div.upload-ico');
   $form_ico.on('click', function(){
     var $this = $(this);
     var _upload_type = $this.attr('data-type');
+    var $parnet_grounp = $this.parents('.form-group');
+
     $upload_form.attr('data-type', _upload_type);
-    $upload_tips = $this.nextAll('.upload-tips');
-    $upload_pro = $this.nextAll('.upload-pro');
+    $upload_tips = $parnet_grounp.find('.upload-tips');
+    $upload_pro = $parnet_grounp.find('.upload-pro');
+
+    $upload_tips.empty().hide();
+    $upload_pro.hide();
+    $upload_pro.find('.progress-bar').css('width', '0%').html('');
     // 触发隐藏上传文件控件
     $file_dom.trigger('click');
   });
 
   // 上传图标 代码
   $file_dom.fileupload({
-        url: '/upload/ico',
+        url: '/admin/upload/ico',
         dataType: 'json',
         //autoUpload: false,
         //acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
@@ -130,6 +136,7 @@ $(function(){
         previewCrop: true
     }).on('fileuploadadd', function (e, data) {
         // 显示上传图片的文件名
+        $upload_tips.show();
         data.context = $('<div/>').appendTo($upload_tips);
         $.each(data.files, function (index, file) {
             var node = $('<p/>')
@@ -158,11 +165,13 @@ $(function(){
         }
     }).on('fileuploadprogressall', function (e, data) {
         // 文件上传完成后， 前端进度条样式改变
+        $upload_pro.show();
         var progress = parseInt(data.loaded / data.total * 100, 10);
         $upload_pro.find('.progress-bar').css(
             'width',
             progress + '%'
         );
+        $upload_pro.find('.progress-bar').html(progress + '%');
     }).on('fileuploaddone', function (e, data) {
         // 文件上传完成
         $.each(data.result.files, function (index, file) {

@@ -94,9 +94,9 @@ block content
             .btn.btn-primary(class="upload-ico" data-type="rule-add").form-control 点击上传图标
           .col-md-2
             .upload-tips.unvisible 图标上传提示
-          .col-md-6
-            .upload-pro.unvisible
-              .progress-bar
+          .col-md-4.col-md-offset-2
+            .upload-pro.unvisible.progress
+              .progress-bar(role="progressbar")
         .form-group.ue-group
           label.col-md-1.control-label 详情
           .col-md-10
@@ -144,5 +144,9 @@ block content
   script(src="/components/ueditor/ueditor.config.js")
   script(src="/components/ueditor/ueditor.all.min.js")
   script(charset="utf-8" src="/components/ueditor/lang/zh-cn/zh-cn.js")
+  // 加入上传插件
+  script(type="text/javascript",src="/components/jquery.ui.widget.js")
+  script(type="text/javascript",src="/components/jquery.iframe-transport.js")
+  script(type="text/javascript",src="/components/jquery.fileupload.js")
   //导入tkd处理脚本
   script(src="/javascripts/tkd.js")

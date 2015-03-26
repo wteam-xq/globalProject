@@ -45,7 +45,7 @@ adminCtrol.uploadIco = function(req, res) {
     fields.push([field, value]);
   // 前端文件读取时事件
   }).on('file', function(field, file) {
-    console.log(field, file);
+    
     files.push([field, file]);
     docs.push(file);
 
