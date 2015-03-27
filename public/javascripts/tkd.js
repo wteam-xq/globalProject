@@ -97,18 +97,15 @@ $(function(){
   });
   
   // 隐藏上传图标相关节点
-  var $upload_form = $('#upload-form');
   var $upload_tips = null;
   var $upload_pro = null;
-  var $file_dom = $upload_form.find('#upload-file');
+  var $file_dom = $('#upload-file');
   // 触发上传控件的按钮
   var $form_ico = $('#sub-panel').find('div.upload-ico');
   $form_ico.on('click', function(){
     var $this = $(this);
-    var _upload_type = $this.attr('data-type');
     var $parnet_grounp = $this.parents('.form-group');
 
-    $upload_form.attr('data-type', _upload_type);
     $upload_tips = $parnet_grounp.find('.upload-tips');
     $upload_pro = $parnet_grounp.find('.upload-pro');
 
