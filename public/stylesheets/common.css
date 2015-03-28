@@ -16,6 +16,10 @@ a {
 .unvisible{
   display: none;
 }
+.unvisibility{
+  opacity:0;
+  filter:alpha(opacity=0);
+}
 .loading-ico{
   width: 45px;
   height: 45px;
@@ -24,9 +28,14 @@ a {
 .mright-15{
   margin-right: 15px;
 }
-
 .mleft-15{
   margin-left: 15px;
+}
+.prelative{
+  position: relative;
+}
+.pabsolute{
+  position: absolute;
 }
 
 /*metro 风格颜色块*/
@@ -139,4 +148,8 @@ a {
 }
 .progress-bar{
   line-height:  34px !important;
+}
+.upload-file{
+  position: absolute;
+  z-index: 100;
 }

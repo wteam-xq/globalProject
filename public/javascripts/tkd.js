@@ -99,21 +99,17 @@ $(function(){
   // 隐藏上传图标相关节点
   var $upload_tips = null;
   var $upload_pro = null;
-  var $file_dom = $('#upload-file');
-  // 触发上传控件的按钮
-  var $form_ico = $('#sub-panel').find('div.upload-ico');
-  $form_ico.on('click', function(){
+  var $file_dom = $('#sub-panel').find('.upload-file');
+  
+  $file_dom.on('click', function(){
     var $this = $(this);
     var $parnet_grounp = $this.parents('.form-group');
 
     $upload_tips = $parnet_grounp.find('.upload-tips');
     $upload_pro = $parnet_grounp.find('.upload-pro');
-
     $upload_tips.empty().hide();
     $upload_pro.hide();
     $upload_pro.find('.progress-bar').css('width', '0%').html('');
-    // 触发隐藏上传文件控件
-    $file_dom.trigger('click');
   });
 
   // 上传图标 代码
@@ -192,7 +188,6 @@ $(function(){
                 .append('<br>')
                 .append(error);
         });
-    }).prop('disabled', !$.support.fileInput)
-        .parent().addClass($.support.fileInput ? undefined : 'disabled'); 
+    }); 
   
 });
