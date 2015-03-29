@@ -7,8 +7,11 @@ body {
 a {
   color: #00B7FF;
 }
-.grey{
+.bg-grey{
   background-color: #ccc !important;
+}
+.red{
+  color: red;
 }
 .clear-right{
   margin-right: 0px !important;
@@ -106,6 +109,11 @@ a {
 }
 .tile h1{
   color: #fff;
+}
+/* 用户组样式*/
+.ntnull-tips{
+  color: red;
+  font-size: 18px;
 }
 
 /*选项卡样式*/

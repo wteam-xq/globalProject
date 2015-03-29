@@ -72,7 +72,9 @@ block content
               .col-md-8
                 input(type="text" id="name" name="name").form-control
             .form-group
-              label.col-md-2.control-label 邮箱
+              .col-md-2.control-label
+                label 邮箱
+                span.ntnull-tips *
               .col-md-8
                 input(type="text" id="email" name="email").form-control
             .form-group
@@ -88,11 +90,15 @@ block content
               .col-md-8
                 input(type="text" id="hobby" name="hobby").form-control
             .form-group
-              label.col-md-2.control-label 密码
+              .col-md-2.control-label
+                label 密码
+                span.ntnull-tips *
               .col-md-8
                 input(type="password" id="pas" name="pas").form-control
             .form-group
-              label.col-md-2.control-label 确认密码
+              .col-md-2.control-label
+                label 确认密码
+                span.ntnull-tips *
               .col-md-8
                 input(type="password" id="confirmPas" name="confirmPas").form-control
 
@@ -115,7 +121,9 @@ block content
               .col-md-8
                 input(type="text" id="name" name="name" value="").form-control
             .form-group
-              label.col-md-2.control-label 邮箱
+              .col-md-2.control-label
+                label 邮箱
+                span.ntnull-tips *
               .col-md-8
                 input(type="text" id="email" name="email" value="").form-control
             .form-group
@@ -132,18 +140,22 @@ block content
                 input(type="text" id="hobby" name="hobby" value="").form-control
             
             .form-group
-              label.col-md-2.control-label 密码
+              .col-md-2.control-label
+                label 密码
+                span.ntnull-tips *
               .col-md-8
                 input(type="password" id="pas" name="pas" value="").form-control
             .form-group
-              label.col-md-2.control-label 确认密码
+              .col-md-2.control-label
+                label 确认密码
+                span.ntnull-tips *
               .col-md-8
                 input(type="password" id="confirmPas" name="confirmPas" value="").form-control
 
             .form-group
               label.col-md-2.control-label 上次更新时间
               .col-md-8
-                .form-control.grey(id='last-update')
+                .form-control.bg-grey(id='last-update')
                 //- .form-control #{moment(user.meta.updateAt).format("YYYY-MM-DD")}
 
             .form-group

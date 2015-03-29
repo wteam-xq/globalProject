@@ -99,7 +99,7 @@ $(function(){
   // 隐藏上传图标相关节点
   var $upload_tips = null;
   var $upload_pro = null;
-  var $file_dom = $('#sub-panel').find('.upload-file');
+  var $file_dom = $sub_panel.find('.upload-file');
   
   $file_dom.on('click', function(){
     var $this = $(this);
@@ -189,5 +189,13 @@ $(function(){
                 .append(error);
         });
     }); 
-  
+  // 提交规则
+  var $rule_commit_add = $sub_panel.find('.commitBtn');
+  $rule_commit_add.on('click', function(){
+    // 获得可编辑内容
+    var _ue_content = $Ue.getContent();
+    alert(_ue_content);
+  });
+
+
 });
