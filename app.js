@@ -8,6 +8,8 @@ var mongoose = require('mongoose');
 // 数据库保存用户登录信息
 var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
+// 图片上传模块
+var buyboy = require('connect-busboy');
 
 var dbOptions = require('./dbConfig');
 var routes = require('./routes/index');
@@ -25,6 +27,8 @@ var db = mongoose.connect(dbOptions.url);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// 上传文件依赖文件
+app.use(buyboy());
 // uncomment after placing your favicon in /public
 app.use(logger('dev'));
 app.use(bodyParser.json());

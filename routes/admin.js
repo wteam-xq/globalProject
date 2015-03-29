@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var adminControl = require('../control/adminCtrl');
+var UEControl = require('../control/UECtrl');
 
 router.get('/test', adminControl.testList);
 router.get('/*', checkLogin);
@@ -34,6 +35,11 @@ router.route('/user/update')
 // 删除用户
 router.post('/user/delete', adminControl.deleteUser);
 
+
+// UE编辑器后台路由
+router.route('/ue/uploads')
+.get(UEControl.index)
+.post(UEControl.index);
 
 //检查用户是否已登录
 function checkLogin(req, res, next){

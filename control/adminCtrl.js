@@ -35,10 +35,9 @@ adminCtrol.tkdList = function(req, res) {
 adminCtrol.uploadIco = function(req, res) {
   // parse a file upload
   var form = new formidable.IncomingForm(),files=[],fields=[],docs=[];
-  console.log('start upload');
   
   //存放目录
-  form.uploadDir = 'tmp/';
+  form.uploadDir = 'uploads/';
 
   // 接收到前端传过来的文件时事件
   form.on('field', function(field, value) {
@@ -52,10 +51,10 @@ adminCtrol.uploadIco = function(req, res) {
     var types = file.name.split('.');
     var date = new Date();
     var ms = Date.parse(date);
-    fs.renameSync(file.path, "tmp/files" + ms + '_'+file.name);
+    fs.renameSync(file.path, "public/upload_imgs/files" + ms + '_'+file.name);
   // 文件读取结束事件
   }).on('end', function() {
-    console.log('-> upload done');
+    
     res.writeHead(200, {
       'content-type': 'text/plain'
     });
@@ -72,7 +71,6 @@ adminCtrol.uploadIco = function(req, res) {
   // 文件解析事件
   form.parse(req, function(err, fields, files) {
     err && console.log('formidabel error : ' + err);
-    console.log('parsing done');
   });
 };
 
