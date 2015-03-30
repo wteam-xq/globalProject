@@ -6,3 +6,4 @@ public/components/*
 public/images/*
 public/upload_imgs/*
 tmp/*
+npm-debug.log

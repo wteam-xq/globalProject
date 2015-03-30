@@ -33,3 +33,6 @@ module.exports = new Db(
 * 03-17  express-session 模块， 保存的内容req.session.xxx, nodejs 重启后消失。。。
 * 方案： 将session 数据存在cookies 、 内存 、redis 或 mongodb中；
 
+* 03-27  前端上传插件 file-upload 按钮点击触发， 触发一次后再次点击不会上传
+* 方案： 不用按钮触发， 使文件按钮隐藏（透明度设置成0）并覆盖在按钮上。
+
