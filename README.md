@@ -2,11 +2,14 @@
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
 * 技术点： mongodb express bootstrap jquery
 
-#### 图片资源百度网盘地址：[依赖库、图片资源](http://pan.baidu.com/s/1o67MPQi) （更新ing...）
+#### 图片资源百度网盘地址：[依赖库、图片资源](http://pan.baidu.com/s/1kTKeL6Z) （更新ing...）
 
 #### 本地部署（win7 64bit为例）
-* 确保本地已安装 git 以及 node 环境，在某文件夹 运行git clone https://github.com/wteam-xq/globalProject 下载该项目
-* 安装mongodb（最好配置成window服务），生成globalDb数据库、生成users表
+* 确保本地已安装 git 以及 node 环境，在某文件夹 右键-》“git bash” 运行:
+```Bash
+git clone https://github.com/wteam-xq/globalProject 
+```
+* 安装mongodb（最好配置成window服务），生成globalDb数据库、生成users、tkdRule表
   * 手动安装mongodb, 下载地址： [mongodb下载](http://pan.baidu.com/s/1qWG5Lr2)
   * mongodb 配置以及设置成windows服务：[配置mongodb](http://blog.csdn.net/liusong0605/article/details/10574863)
   * mongodb shell 控制台使用: [mongodb 基本命令](http://www.cnblogs.com/xusir/archive/2012/12/24/2830957.html)
@@ -19,6 +22,8 @@ use globalDb
 switched to db globalDb
 
 db.createCollection("users")
+{ "ok" : 1}
+db.createCollection("tkdRule")
 { "ok" : 1}
 
 ```

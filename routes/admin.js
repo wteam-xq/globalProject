@@ -1,39 +1,41 @@
 var express = require('express');
 var router = express.Router();
-var adminControl = require('../control/adminCtrl');
+var userCtrol = require('../control/userCtrl');
 var UEControl = require('../control/UECtrl');
+var tkdControl = require('../control/tkdCtrl');
+var resumeControl = require('../control/resumeCtrl');
 
-router.get('/test', adminControl.testList);
+router.get('/test', userCtrol.testList);
 router.get('/*', checkLogin);
 
 // 后台首页菜单
-router.get('/', adminControl.adminIndex);
-router.get('/index', adminControl.adminIndex);
+router.get('/', userCtrol.adminIndex);
+router.get('/index', userCtrol.adminIndex);
 
 /*三国杀后台列表页*/
-router.get('/tkd', adminControl.tkdList);
-router.get('/tkd/index', adminControl.tkdList);
+router.get('/tkd', tkdControl.tkdList);
+router.get('/tkd/index', tkdControl.tkdList);
 // 上传图标
-router.post('/upload/ico', adminControl.uploadIco);
+router.post('/upload/ico', tkdControl.uploadIco);
 
 /*个人简历后台列表页*/
-router.get('/resume', adminControl.resumeIndex);
-router.get('/resume/index', adminControl.resumeIndex);
+router.get('/resume', resumeControl.resumeIndex);
+router.get('/resume/index', resumeControl.resumeIndex);
 
 
 /* 用户组后台列表页 */
-router.get('/users', adminControl.userList);
+router.get('/users', userCtrol.userList);
 // 查询用户(暂根据邮箱查询)
-router.get('/user/search', adminControl.searchUser);
+router.get('/user/search', userCtrol.searchUser);
 // 添加用户. 
 router.route('/user/add')
-.post(adminControl.addUserPost);
+.post(userCtrol.addUserPost);
 // 更新用户 
 router.route('/user/update')
-.get(adminControl.updateUser)
-.post(adminControl.updateUserPost);
+.get(userCtrol.updateUser)
+.post(userCtrol.updateUserPost);
 // 删除用户
-router.post('/user/delete', adminControl.deleteUser);
+router.post('/user/delete', userCtrol.deleteUser);
 
 
 // UE编辑器后台路由
