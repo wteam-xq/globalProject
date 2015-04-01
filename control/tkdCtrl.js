@@ -18,7 +18,7 @@ tkdCtrol.uploadIco = function(req, res) {
   var form = new formidable.IncomingForm(),files=[],fields=[],docs=[];
   
   //存放目录
-  form.uploadDir = 'uploads/';
+  form.uploadDir = 'public/upload_imgs/';
 
   // 接收到前端传过来的文件时事件
   form.on('field', function(field, value) {

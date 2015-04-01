@@ -1,10 +1,14 @@
 
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
+=======
 * 技术点： mongodb express bootstrap jquery
 
+
 #### 图片资源百度网盘地址：[依赖库、图片资源](http://pan.baidu.com/s/1kTKeL6Z) （更新ing...）
+=======
 
 #### 本地部署（win7 64bit为例）
+=======
 * 确保本地已安装 git 以及 node 环境，在某文件夹 右键-》“git bash” 运行:
 ```Bash
 git clone https://github.com/wteam-xq/globalProject 
@@ -27,7 +31,7 @@ db.createCollection("tkdRule")
 { "ok" : 1}
 
 ```
-##### ps: 如果配置 mongodb 成window服务 遇到“服务名无效” 的问题， 请单击左下角"开始"图标-》所有程序-》附件-》右键“命令提示符” 以管理员身份运行
+*ps: 如果配置 mongodb 成window服务 遇到“服务名无效” 的问题， 请单击左下角"开始"图标-》所有程序-》附件-》右键“命令提示符” 以管理员身份运行*
 
 
 * 取上述网盘里的文件夹放入项目对应目录下。
