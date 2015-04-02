@@ -88,6 +88,7 @@ block content
           .col-md-2.prelative
             //- 隐藏上传图控件, data-type rule-add:  新增规则， rule-update： 更新规则
             input.upload-file.form-control.unvisibility.btn.btn-primary(type="file" name="ico" value='点击上传图标')
+            input.icoPath(type="hidden" name='icoPath' value='')
             .btn.btn-primary(class="upload-ico").form-control 点击上传图标
           .col-md-2
             .upload-tips.unvisible 图标上传提示
@@ -97,6 +98,8 @@ block content
         .form-group.ue-group
           label.col-md-1.control-label 详情
           .col-md-10
+            input(type='hidden' name='ueContent' class='ueContent')
+            input(type='hidden' name='ueTxt' class='ueTxt')
             // 调用百度编辑器
             script(id="add-content" name="content" class="ue-container" type="text/plain")
 

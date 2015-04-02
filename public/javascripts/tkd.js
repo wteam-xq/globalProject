@@ -148,21 +148,14 @@ $(function(){
         );
         $upload_pro.find('.progress-bar').html(progress + '%');
     }).on('fileuploaddone', function (e, data) {
-        // 文件上传完成
-        $.each(data.result.files, function (index, file) {
-            if (file.url) {
-              var link = $('<a>')
-                  .attr('target', '_blank')
-                  .prop('href', file.url);
-              $(data.context.children()[index])
-                  .wrap(link);
-            } else if (file.error) {
-              var error = $('<span class="text-danger"/>').text(file.error);
-              $(data.context.children()[index])
-                  .append('<br>')
-                  .append(error);
-            }
-        });
+      // 文件上传完成
+      $.each(data.result.files, function (index, file) {
+          if (file.url) {
+            $upload_tips.parent().prev('div.prelative').find('input.icoPath').val(file.path);
+          } else if (file.error) {
+            $upload_tips.append('<span class="red">' + file.error + '<span/>');
+          }
+      });
     }).on('fileuploadfail', function (e, data) {
       $.each(data.files, function (index, file) {
         var error = $('<span class="text-danger"/>').text('File upload failed.');
@@ -236,9 +229,11 @@ $(function(){
       var _content_txt = $Ue.getContentTxt();
       var $add_panel = $sub_panel.find('.rule-add-panel');
       var $add_form = $add_panel.find('form');
+      var $ueContent = $add_panel.find('.ueContent');
+      var $ueTxt = $add_panel.find('.ueTxt');
 
-      console.log(_content);
-      console.log(_content_txt);
+      $ueContent.val(_content);
+      $ueTxt.val(_content_txt);
       $add_form.submit();
     });
     $commit_update.on('click', function(){

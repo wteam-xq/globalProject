@@ -25,27 +25,31 @@ tkdCtrol.uploadIco = function(req, res) {
     fields.push([field, value]);
   // 前端文件读取时事件
   }).on('file', function(field, file) {
-    
-    files.push([field, file]);
-    docs.push(file);
-
     var types = file.name.split('.');
     var date = new Date();
     var ms = Date.parse(date);
-    fs.renameSync(file.path, "public/upload_imgs/files" + ms + '_'+file.name);
+    var _url = "public/upload_imgs/" + ms + '_'+ file.name;
+
+    file.url = _url;
+    files.push([field, file]);
+    docs.push(file);
+
+    fs.renameSync(file.path, _url);
   // 文件读取结束事件
   }).on('end', function() {
     
     res.writeHead(200, {
       'content-type': 'text/plain'
     });
-    var out={Resopnse:{
-      'result-code':0,
-      timeStamp:new Date(),
-    },
-    files:docs
+    var out={
+      Resopnse:{
+        'result-code':0,
+        timeStamp:new Date()
+      },
+      files:docs
     };
     var sout=JSON.stringify(out);
+    console.log(sout);
     res.end(sout);
   });
 
@@ -55,7 +59,24 @@ tkdCtrol.uploadIco = function(req, res) {
   });
 };
 
-tkdCtrol.ruleAdd = function(req, res){};
+tkdCtrol.ruleAdd = function(req, res){
+  var rule = {
+    title: req.requery.title || '',
+    desc: req.requery.desc || '',
+    ico: req.requery.icoPath || '',
+    content: req.requery.ueContent || '',
+    htmlCont: req.requery.ueTxt || ''
+  };
+  Rule.createInfo(rule, function(error, result){
+    if (error){
+      // 写一错误显示页面， 错误信息在该页面显示之
+      console.log(error);
+    }else{
+      res.redirect('/admin/tkd');
+    }
+  });
+
+};
 
 tkdCtrol.ruleUpdate = function(){req, res};
 
