@@ -55,6 +55,10 @@ tkdCtrol.uploadIco = function(req, res) {
   });
 };
 
+tkdCtrol.ruleAdd = function(req, res){};
+
+tkdCtrol.ruleUpdate = function(){req, res};
+
 /**************************三国杀end**********************************/
 
 module.exports = tkdCtrol

@@ -232,8 +232,14 @@ $(function(){
     var $commit_update = $sub_panel.find('div.rule-add-panel').find('.commitBtn');
     $commit_add.on('click', function(){
       // 获得可编辑内容
-      var _ue_content = $Ue.getContent();
-      alert(_ue_content);
+      var _content = $Ue.getContent();
+      var _content_txt = $Ue.getContentTxt();
+      var $add_panel = $sub_panel.find('.rule-add-panel');
+      var $add_form = $add_panel.find('form');
+
+      console.log(_content);
+      console.log(_content_txt);
+      $add_form.submit();
     });
     $commit_update.on('click', function(){
 

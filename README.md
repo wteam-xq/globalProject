@@ -1,14 +1,14 @@
 
 ### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
-=======
 * 技术点： mongodb express bootstrap jquery
+=======
 
 
 #### 图片资源百度网盘地址：[依赖库、图片资源](http://pan.baidu.com/s/1kTKeL6Z) （更新ing...）
 =======
 
 #### 本地部署（win7 64bit为例）
-=======
+
 * 确保本地已安装 git 以及 node 环境，在某文件夹 右键-》“git bash” 运行:
 ```Bash
 git clone https://github.com/wteam-xq/globalProject 
