@@ -41,15 +41,29 @@ tkdCtrol.uploadIco = function(req, res) {
     res.writeHead(200, {
       'content-type': 'text/plain'
     });
-    var out={
+    // 自定义返回前台数据
+    var _files = [];
+    var _file = null;
+    var _temp_file = null;
+    for(var i = 0; i < docs.length; i++){
+      _file = docs[i];
+      _temp_file = {
+        name: _file.name,
+        path: _file.path,
+        size: _file.size,
+        type: _file.type,
+        url: _file.url
+      };
+      _files.push(_temp_file);
+    }
+    var out = {
       Resopnse:{
         'result-code':0,
         timeStamp:new Date()
       },
-      files:docs
+      files: _files
     };
-    var sout=JSON.stringify(out);
-    console.log(sout);
+    var sout = JSON.stringify(out);
     res.end(sout);
   });
 
@@ -61,11 +75,11 @@ tkdCtrol.uploadIco = function(req, res) {
 
 tkdCtrol.ruleAdd = function(req, res){
   var rule = {
-    title: req.requery.title || '',
-    desc: req.requery.desc || '',
-    ico: req.requery.icoPath || '',
-    content: req.requery.ueContent || '',
-    htmlCont: req.requery.ueTxt || ''
+    title: req.query.title || '',
+    desc: req.query.desc || '',
+    ico: req.query.icoPath || '',
+    content: req.query.ueContent || '',
+    htmlCont: req.query.ueTxt || ''
   };
   Rule.createInfo(rule, function(error, result){
     if (error){

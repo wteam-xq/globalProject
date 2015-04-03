@@ -151,7 +151,7 @@ $(function(){
       // 文件上传完成
       $.each(data.result.files, function (index, file) {
           if (file.url) {
-            $upload_tips.parent().prev('div.prelative').find('input.icoPath').val(file.path);
+            $upload_tips.parent().prev('div.prelative').find('input.icoPath').val(file.url);
           } else if (file.error) {
             $upload_tips.append('<span class="red">' + file.error + '<span/>');
           }

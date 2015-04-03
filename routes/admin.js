@@ -16,8 +16,8 @@ router.get('/index', userCtrol.adminIndex);
 router.get('/tkd', tkdControl.tkdList);
 router.get('/tkd/index', tkdControl.tkdList);
 // 规则添加、规则更新
-router.post('tkd/ruleAdd', tkdControl.ruleAdd);
-router.post('tkd/ruleUpdate', tkdControl.ruleUpdate);
+router.post('/tkd/ruleAdd', tkdControl.ruleAdd);
+router.post('/tkd/ruleUpdate', tkdControl.ruleUpdate);
 
 // 上传图标
 router.post('/upload/ico', tkdControl.uploadIco);
