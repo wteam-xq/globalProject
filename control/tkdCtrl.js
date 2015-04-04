@@ -75,12 +75,16 @@ tkdCtrol.uploadIco = function(req, res) {
 
 tkdCtrol.ruleAdd = function(req, res){
   var rule = {
-    title: req.query.title || '',
-    desc: req.query.desc || '',
-    ico: req.query.icoPath || '',
-    content: req.query.ueContent || '',
-    htmlCont: req.query.ueTxt || ''
+    title: req.body.title || '',
+    desc: req.body.desc || '',
+    ico: req.body.icoPath || '',
+    content: req.body.ueContent || '',
+    htmlCont: req.body.ueTxt || ''
   };
+  if (req.body.title == null || req.body.title == '') {
+    res.redirect('/admin/tkd');
+  }
+
   Rule.createInfo(rule, function(error, result){
     if (error){
       // 写一错误显示页面， 错误信息在该页面显示之

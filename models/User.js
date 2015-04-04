@@ -106,6 +106,7 @@ UserSchema.statics = {
       .remove(conditions, cb);
   }
 };
-var User = mongoose.model('users', UserSchema);
+// 第一参数为 模型名， 第二参数为模型骨架 第三参数对应为 数据库表名
+var User = mongoose.model('user', UserSchema, 'users');
 
 module.exports = User

@@ -39,3 +39,6 @@ module.exports = new Db(
 * 04-02  上传图标控件， 前后台地址不对应；（保存在硬盘的图片名称与传回前端名字不同）
 * 方案： 新设置一自定义变量， 将前后台处理的json格式统一。
 
+* 04-04 使用mongoose 的 mongoose.model('tkdrule', TkdRuleSchema); 写入数据库时， 为什么会变成写入到tkdrules中去？
+* 解答：因为 mongoose.model(name,[schme],[collection],[skipInit]); 第一个参数的只是模型的名字并不是对应的数据库名。第三个参数才是对应的数据库表名。
+

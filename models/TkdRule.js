@@ -31,7 +31,7 @@ TkdRuleSchema.pre('save', function(next){
   next();
 })
 
-// 数据模型方法
+// 数据模型方法(实际调用时， this 指向的是model对象)
 TkdRuleSchema.statics = {
   // 查找规则列表， 根据标题升序
   fetch: function(cbf){
@@ -84,6 +84,7 @@ TkdRuleSchema.statics = {
       .remove(conditions, cbf);
   }
 };
-var Rule = mongoose.model('tkdRule', TkdRuleSchema);
+// 第一参数为 模型名， 第二参数为模型骨架 第三参数对应为 数据库表名
+var Rule = mongoose.model('tkdrule', TkdRuleSchema, 'tkdrules');
 
 module.exports = Rule
