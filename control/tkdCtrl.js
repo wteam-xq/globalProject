@@ -8,9 +8,18 @@ var Rule = require('../models/TkdRule');
 /**************************三国杀后台逻辑************************************/
 // 查询用户列表
 tkdCtrol.tkdList = function(req, res) {
-  res.render('admin/tkd_list', {
-      title: '三国杀列表页' 
-    });
+  // 搜索规则列表
+  Rule.fetch(function(err, rules){
+    if (err){
+      console.log('查询异常');
+    }else{
+      res.render('admin/tkd_list', { 
+        title: '三国杀列表页',
+        rules: rules
+      });
+    }
+  });
+  
 };
 // 上传图标
 tkdCtrol.uploadIco = function(req, res) {
@@ -28,6 +37,7 @@ tkdCtrol.uploadIco = function(req, res) {
     var types = file.name.split('.');
     var date = new Date();
     var ms = Date.parse(date);
+    // 传回给前端的图片地址
     var _url = "public/upload_imgs/" + ms + '_'+ file.name;
 
     file.url = _url;
@@ -47,12 +57,15 @@ tkdCtrol.uploadIco = function(req, res) {
     var _temp_file = null;
     for(var i = 0; i < docs.length; i++){
       _file = docs[i];
+      // 地址替换
+      _url = _file.url.replace('public', '');
+
       _temp_file = {
         name: _file.name,
         path: _file.path,
         size: _file.size,
         type: _file.type,
-        url: _file.url
+        url: _url
       };
       _files.push(_temp_file);
     }
@@ -78,8 +91,8 @@ tkdCtrol.ruleAdd = function(req, res){
     title: req.body.title || '',
     desc: req.body.desc || '',
     ico: req.body.icoPath || '',
-    content: req.body.ueContent || '',
-    htmlCont: req.body.ueTxt || ''
+    content: req.body.ueTxt || '',
+    htmlCont: req.body.ueContent || ''
   };
   if (req.body.title == null || req.body.title == '') {
     res.redirect('/admin/tkd');

@@ -225,16 +225,35 @@ $(function(){
     var $commit_update = $sub_panel.find('div.rule-add-panel').find('.commitBtn');
     $commit_add.on('click', function(){
       // 获得可编辑内容
-      var _content = $Ue.getContent();
-      var _content_txt = $Ue.getContentTxt();
       var $add_panel = $sub_panel.find('.rule-add-panel');
       var $add_form = $add_panel.find('form');
       var $ueContent = $add_panel.find('.ueContent');
       var $ueTxt = $add_panel.find('.ueTxt');
+      var _title = $add_form.find('.title').val();
+      var _desc = $add_form.find('.desc').val();
+      var _ico_path = $add_form.find('.icoPath').val();
+      var _content = $Ue.getContent();
+      var _content_txt = $Ue.getContentTxt();
+      var $tips = $add_form.find('.alert');
 
       $ueContent.val(_content);
       $ueTxt.val(_content_txt);
-      $add_form.submit();
+      // 提交字段是否齐全校验
+      if (_title == ''){
+        showTips('标题不能为空！', $tips);
+        return false;
+      }else if (_desc == ''){
+        showTips('简介不能为空！', $tips);
+        return false;
+      }else if(_ico_path == ''){
+        showTips('图标不能为空！', $tips);
+        return false;
+      }else if (_content_txt == ''){
+        showTips('详情不能为空！', $tips);
+        return false;
+      }else{
+        $add_form.submit();
+      }
     });
     $commit_update.on('click', function(){
 
@@ -252,6 +271,13 @@ $(function(){
       $upload_pro.hide();
       $upload_pro.find('.progress-bar').css('width', '0%').html('');
       $Ue2.execCommand('cleardoc');
+    }
+
+    // 新增、更新提示显示
+    function showTips(tips, $tips){
+      $tips.html(tips);
+      $tips.removeClass('hidden');
+      $(window).scrollTop(0);
     }
   }
 

@@ -161,3 +161,7 @@ a {
   position: absolute;
   z-index: 100;
 }
+.list-ico{
+  width: 65px;
+  height: 60px;
+}
