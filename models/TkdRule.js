@@ -6,6 +6,7 @@ var TkdRuleSchema = new mongoose.Schema({
   title: String,
   desc: String,
   ico: String,
+  icoName: String,
   content: String,
   htmlCont: String,
   meta: {

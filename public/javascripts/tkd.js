@@ -151,7 +151,10 @@ $(function(){
       // 文件上传完成
       $.each(data.result.files, function (index, file) {
           if (file.url) {
+            // 保存图片路径
             $upload_tips.parent().prev('div.prelative').find('input.icoPath').val(file.url);
+            // 保存图片名字
+            $upload_tips.next('input.icoName').val($upload_tips.text());
           } else if (file.error) {
             $upload_tips.append('<span class="red">' + file.error + '<span/>');
           }
@@ -217,24 +220,44 @@ $(function(){
       $admin_crumb.show();
       // 清除编辑记录
       rulePageReset($update_panel);
+      // 填充规则数据
+      fillRulePage($update_panel, _id);
     });
 
     // 提交新增规则请求
     var $commit_add = $sub_panel.find('div.rule-add-panel').find('.commitBtn');
     // 提交更新规则请求
-    var $commit_update = $sub_panel.find('div.rule-add-panel').find('.commitBtn');
+    var $commit_update = $sub_panel.find('div.rule-update-panel').find('.commitBtn');
     $commit_add.on('click', function(){
-      // 获得可编辑内容
-      var $add_panel = $sub_panel.find('.rule-add-panel');
-      var $add_form = $add_panel.find('form');
-      var $ueContent = $add_panel.find('.ueContent');
-      var $ueTxt = $add_panel.find('.ueTxt');
-      var _title = $add_form.find('.title').val();
-      var _desc = $add_form.find('.desc').val();
-      var _ico_path = $add_form.find('.icoPath').val();
-      var _content = $Ue.getContent();
-      var _content_txt = $Ue.getContentTxt();
-      var $tips = $add_form.find('.alert');
+      var $this = $(this);
+      var $add_panel = $this.parents('div.row');
+      submitRule($add_panel, 'add');
+    });
+
+    $commit_update.on('click', function(){
+      var $this = $(this);
+      var $update_panel = $this.parents('div.row');
+      submitRule($update_panel, 'update');
+    });
+
+    // 规则提交校验
+    function submitRule($rule_panel, _type){
+      var $panel_form = $rule_panel.find('form');
+      var $ueContent = $rule_panel.find('.ueContent');
+      var $ueTxt = $rule_panel.find('.ueTxt');
+      var _title = $panel_form.find('.title').val();
+      var _desc = $panel_form.find('.desc').val();
+      var _ico_path = $panel_form.find('.icoPath').val();
+      var $tips = $panel_form.find('.alert');
+      var _content, _content_txt;
+
+      if (_type == 'add'){
+        _content = $Ue.getContent();
+        _content_txt = $Ue.getContentTxt();
+      }else if(_type == 'update'){
+        _content = $Ue2.getContent();
+        _content_txt = $Ue2.getContentTxt();
+      }
 
       $ueContent.val(_content);
       $ueTxt.val(_content_txt);
@@ -252,12 +275,9 @@ $(function(){
         showTips('详情不能为空！', $tips);
         return false;
       }else{
-        $add_form.submit();
+        $panel_form.submit();
       }
-    });
-    $commit_update.on('click', function(){
-
-    });
+    }
 
     // 规则编辑页重置
     function rulePageReset($rule_panel){
@@ -271,6 +291,42 @@ $(function(){
       $upload_pro.hide();
       $upload_pro.find('.progress-bar').css('width', '0%').html('');
       $Ue2.execCommand('cleardoc');
+    }
+
+    // 填充规则页面数据
+    function fillRulePage($rule_panel, _id){
+      var $tips = $rule_panel.find('.alert');
+      var $title = $rule_panel.find('.title');
+      var $desc = $rule_panel.find('.desc');
+      var $upload_tips = $rule_panel.find('.upload-tips');
+      var $ico_path = $rule_panel.find('.icoPath');
+      var $ico_name = $rule_panel.find('.icoName');
+
+      // 数据库规则内容
+      var _title, _desc, _ico_name, _ico_path, _ue_html, _data;
+
+      // 异步获取数据
+      $.get('tkd/getRuleById', {id: _id},  function(res){
+        if (res.error){
+          showTips(res.error, $tips);
+        }else{
+          _data = res.data;
+          _title = _data.title?_data.title:'';
+          _desc = _data.desc?_data.desc:'';
+          _ico_path = _data.ico?_data.ico:'';
+          _ico_name = _data.icoName?_data.icoName:'';
+          _ue_html = _data.htmlCont?_data.htmlCont:'';
+          
+          $title.val(_title);
+          $desc.val(_desc);
+          $ico_path.val(_ico_path);
+          $ico_name.val(_ico_name);
+          $upload_tips.show().html(_ico_name);
+          // 设置编辑器内容
+          $Ue2.setContent(_ue_html);
+        }
+      });
+
     }
 
     // 新增、更新提示显示

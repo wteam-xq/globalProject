@@ -105,6 +105,7 @@ block content
             .btn.btn-primary(class="upload-ico").form-control 点击上传图标
           .col-md-2
             .upload-tips.unvisible 图标上传提示
+            input.icoName(type='hidden' name='icoName' value='')
           .col-md-4.col-md-offset-2
             .upload-pro.unvisible.progress
               .progress-bar(role="progressbar")
@@ -118,7 +119,7 @@ block content
 
         .form-group
           .col-md-1.col-md-offset-1
-            .commitBtn.btn.btn-primary 提交添加
+            .commitBtn.btn.btn-primary(data-type='add') 提交添加
             //- button(type="submit").btn.btn-primary 提交添加
           .col-md-2
             a.back-main.btn.btn-primary 返回
@@ -137,10 +138,11 @@ block content
           .col-md-2.prelative
             //- 隐藏上传图控件, data-type rule-add:  新增规则， rule-update： 更新规则
             input.upload-file.form-control.unvisibility.btn.btn-primary(type="file" name="ico" value='点击上传图标')
-            
+            input.icoPath(type="hidden" name='icoPath' value='')
             .btn.btn-primary(class="upload-ico").form-control 点击上传图标
           .col-md-2
             .upload-tips.unvisible 图标上传提示
+            input.icoName(type='hidden' name='icoName' value='')
           .col-md-4.col-md-offset-2
             .upload-pro.unvisible.progress
               .progress-bar(role="progressbar")
@@ -152,7 +154,7 @@ block content
 
         .form-group
           .col-md-1.col-md-offset-1
-            button.commitBtn.btn.btn-primary 提交更新
+            button.commitBtn.btn.btn-primary(data-type='update') 提交更新
             //- button(type="submit").btn.btn-primary 提交更新
           .col-md-2
             a.back-main.btn.btn-primary 返回

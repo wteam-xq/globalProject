@@ -86,11 +86,13 @@ tkdCtrol.uploadIco = function(req, res) {
   });
 };
 
+// 添加规则
 tkdCtrol.ruleAdd = function(req, res){
   var rule = {
     title: req.body.title || '',
     desc: req.body.desc || '',
     ico: req.body.icoPath || '',
+    icoName: req.body.icoName || '',
     content: req.body.ueTxt || '',
     htmlCont: req.body.ueContent || ''
   };
@@ -109,7 +111,25 @@ tkdCtrol.ruleAdd = function(req, res){
 
 };
 
-tkdCtrol.ruleUpdate = function(){req, res};
+// 根据ID获取规则数据
+tkdCtrol.getRuleById = function(req, res){
+  var _id = req.query.id;
+  if (_id == null || _id == ''){
+    res.json({error: 'ID不能为空'});
+  }else{
+    Rule.findById(_id, function(err, data){
+      if(err){
+        res.json({error: '根据ID查询规则异常!'});
+      }else{
+        res.json({data: data});
+      }
+    });
+  }
+}
+
+tkdCtrol.ruleUpdate = function(req, res){
+
+};
 
 /**************************三国杀end**********************************/
 
