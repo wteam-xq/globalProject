@@ -39,9 +39,28 @@ $(function(){
       // 异步请求
       var $this = $(this);
       var _id = $selected_id.val();
+      var _type = $selected_id.attr('data-type');
+      var delete_url = '';
 
-      return false;
-      $.post('/admin/tkd/rule/delete', {id: _id}, function(data){
+      // 删除类型
+      switch(_type){
+        case 'rule':
+          delete_url = '/admin/tkd/rule/delete';
+          break;
+        case 'card':
+          delete_url = '/admin/tkd/card/delete';
+          break;
+        case 'heros':
+          delete_url = '/admin/tkd/heros/delete';
+          break;
+        case 'strategy':
+          delete_url = '/admin/tkd/strategy/delete';
+          break;
+        default:
+          delete_url = '/admin/tkd/rule/delete';
+      }
+
+      $.post(delete_url, {id: _id}, function(data){
         if (data.error){
           $('#removeTips').html('删除异常:' + data.error + '  请刷新重试。');
         }else{
@@ -49,9 +68,11 @@ $(function(){
         }
       }, 'json');
     });
+
     // 删除弹出框“取消”按钮点击
     $remove_cancel.on('click', function(){
       $selected_id.val('');
+      $selected_id.attr('data-type', '');
     });
 
     // bootstrap 居中
@@ -185,6 +206,7 @@ $(function(){
       var $this = $(this);
       var _id = $this.attr('data-id');
       $selected_id.val(_id);
+      $selected_id.attr('data-type', 'rule');
       // 改变提示内容
       $remove_tips.html('确定要删除该规则吗？');
       $confirm_dialog.modal({backdrop:'static'});
@@ -301,12 +323,13 @@ $(function(){
       var $upload_tips = $rule_panel.find('.upload-tips');
       var $ico_path = $rule_panel.find('.icoPath');
       var $ico_name = $rule_panel.find('.icoName');
-
-      // 数据库规则内容
-      var _title, _desc, _ico_name, _ico_path, _ue_html, _data;
+      var $rule_id = $rule_panel.find('.ruleId');
 
       // 异步获取数据
       $.get('tkd/getRuleById', {id: _id},  function(res){
+        // 数据库规则内容
+        var _title, _desc, _ico_name, _ico_path, _ue_html, _data, _id;
+
         if (res.error){
           showTips(res.error, $tips);
         }else{
@@ -316,12 +339,14 @@ $(function(){
           _ico_path = _data.ico?_data.ico:'';
           _ico_name = _data.icoName?_data.icoName:'';
           _ue_html = _data.htmlCont?_data.htmlCont:'';
+          _id = _data._id?_data._id:'';
           
           $title.val(_title);
           $desc.val(_desc);
           $ico_path.val(_ico_path);
           $ico_name.val(_ico_name);
           $upload_tips.show().html(_ico_name);
+          $rule_id.val(_id);
           // 设置编辑器内容
           $Ue2.setContent(_ue_html);
         }

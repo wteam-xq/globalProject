@@ -125,6 +125,7 @@ block content
             a.back-main.btn.btn-primary 返回
     .row.unvisible.rule-update-panel
       form.form-horizontal(method="POST" action="tkd/ruleUpdate" name='userform')
+        input(type='hidden' class='ruleId' name='id' value='')
         .form-group
           label.col-md-1.control-label 标题
           .col-md-10
@@ -149,6 +150,8 @@ block content
         .form-group.ue-group
           label.col-md-1.control-label 详情
           .col-md-10
+            input(type='hidden' name='ueContent' class='ueContent')
+            input(type='hidden' name='ueTxt' class='ueTxt')
             // 调用百度编辑器
             script(id="update-content" name="content" class="ue-container" type="text/plain")
 

@@ -127,8 +127,40 @@ tkdCtrol.getRuleById = function(req, res){
   }
 }
 
+// 更新规则
 tkdCtrol.ruleUpdate = function(req, res){
+  var id = req.body.id;
 
+  var rule = {
+    title: req.body.title || '',
+    desc: req.body.desc || '',
+    ico: req.body.icoPath || '',
+    icoName: req.body.icoName || '',
+    content: req.body.ueTxt || '',
+    htmlCont: req.body.ueContent || ''
+  };
+  Rule.updateInfo(id, rule, function(err, updateCount){
+    if (err){
+      console.log(err.error, '   错误码：' + updateCount);
+      res.redirect('/admin/tkd');
+    }else{
+      res.redirect('/admin/tkd');
+    }
+  });
+};
+
+// 删除规则
+tkdCtrol.deleteRuleById = function(req, res){
+  var id = req.body.id;
+
+  Rule.deleteInfo(id, function(err, updateCount){
+    if (err){
+      // console.log(err.error, '   错误码：' + updateCount);
+      res.json({error: '删除规则错误', code:'500'});
+    }else{
+      res.json({success:'true'});
+    }
+  });
 };
 
 /**************************三国杀end**********************************/
