@@ -10,8 +10,12 @@
     li
       a(href='/admin/resume') 个人简历
   ul.nav.navbar-nav.navbar-right.clear-right
-    li
-      a(href='/index') 查看首页
+    if type == 'tkd'
+      li
+        a(href='/tkd') 查看首页
+    else
+      li
+        a(href='/index') 查看首页
     if user
       li
         a(href='#') 欢迎您，#{user.name}

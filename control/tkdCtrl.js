@@ -15,7 +15,8 @@ tkdCtrol.tkdList = function(req, res) {
     }else{
       res.render('admin/tkd_list', { 
         title: '三国杀列表页',
-        rules: rules
+        rules: rules,
+        type: 'tkd'
       });
     }
   });

@@ -7,6 +7,8 @@ router.get('/', frontControl.index);
 router.get('/index', frontControl.index);
 // 前端登录页
 router.get('/login', frontControl.showLogin);
+// 前端三国杀FAQ
+router.get('/tkd', frontControl.showTkd);
 
 
 router.get('/users/index', frontControl.index);

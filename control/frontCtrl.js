@@ -61,5 +61,10 @@ webCtrol.logout = function(req, res){
   }
   res.redirect('/index');
 }
+webCtrol.showTkd = function(req, res){
+  res.render('tkd/index', { 
+    title: '三国杀FAQ'
+  });
+}
 
 module.exports = webCtrol
