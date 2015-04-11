@@ -9,6 +9,8 @@ router.get('/index', frontControl.index);
 router.get('/login', frontControl.showLogin);
 // 前端三国杀FAQ
 router.get('/tkd', frontControl.showTkd);
+// 前端简历页面
+router.get('/resume', frontControl.showResume);
 
 
 router.get('/users/index', frontControl.index);

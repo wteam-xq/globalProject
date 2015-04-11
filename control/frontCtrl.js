@@ -4,18 +4,6 @@ var bcrypt = require('bcrypt-nodejs');
 var webCtrol = {
 }
 
-webCtrol.index = function(req, res){
-  User.fetch(function(err, users){
-    if (err){
-      console.log('查询异常');
-    }else{
-      res.render('users/index', { 
-        title: '用户组页面' ,
-        users: users
-      });
-    }
-  });
-}
 webCtrol.showLogin = function(req, res){
   res.render('login', { 
     title: '用户登录' 
@@ -61,9 +49,29 @@ webCtrol.logout = function(req, res){
   }
   res.redirect('/index');
 }
+// 前端三国杀FAQ页面
 webCtrol.showTkd = function(req, res){
-  res.render('tkd/index', { 
+  res.render('tkd', { 
     title: '三国杀FAQ'
+  });
+}
+// 前端简历页面
+webCtrol.showResume = function(req, res){
+  res.render('resume', { 
+    title: '三国杀FAQ'
+  });
+}
+// 前端用户组页面
+webCtrol.index = function(req, res){
+  User.fetch(function(err, users){
+    if (err){
+      console.log('查询异常');
+    }else{
+      res.render('users', { 
+        title: '用户组页面' ,
+        users: users
+      });
+    }
   });
 }
 

@@ -6,7 +6,8 @@ var resumeCtrol = {
 // 个人简历
 resumeCtrol.resumeIndex = function(req, res) {
   res.render('admin/resume_index', {
-      title: '个人简历列表页' 
+      title: '个人简历列表页',
+      type: 'resume'
     });
 };
 
