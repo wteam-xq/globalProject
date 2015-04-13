@@ -1,4 +1,908 @@
-extends layout
-
-block content
-  h3.text-center 个人简历前端页面
+doctype html
+// saved from url=(0042)http://designova.net/next/index2.html#home
+html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    script(async='', src='./resume_src/photos_public.gne')
+    meta(charset='utf-8')
+    title NEXT - Easy to use Portfolio - Retina Ready and Responsive HTML5 Template
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='next by Designova - An easy to use Personal Portfolio - Retina Ready and Responsive HTML5 theme')
+    meta(name='author', content='Designova')
+    link(rel='shortcut icon', href='http://designova.net/next/assets/ico/favicon.ico')
+    // Standard iPhone Touch Icon
+    link(rel='apple-touch-icon', sizes='57x57', href='http://designova.net/next/assets/ico/apple-touch-icon-57-precomposed')
+    // Retina iPhone Touch Icon
+    link(rel='apple-touch-icon', sizes='114x114', href='http://designova.net/next/assets/ico/apple-touch-icon-114-precomposed')
+    // Standard iPad Touch Icon
+    link(rel='apple-touch-icon', sizes='72x72', href='http://designova.net/next/assets/ico/apple-touch-icon-72-precomposed')
+    // Retina iPad Touch Icon
+    link(rel='apple-touch-icon', sizes='144x144', href='http://designova.net/next/assets/ico/apple-touch-icon-144-precomposed')
+    link(href='http://designova.net/next/assets/css/bootstrap.css', rel='stylesheet')
+    link(href='http://designova.net/next/assets/css/bootstrap-theme.css', rel='stylesheet')
+    link(href='http://designova.net/next/assets/css/extension.css', rel='stylesheet')
+    link(href='http://designova.net/next/assets/css/typography.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/responsive-nav.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/prettyPhoto.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/jquery.tweet.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/responsive-nav.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/quotes.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/services.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/animate.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/effects.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/jquery.easy-pie-chart.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/sidemenu.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/slidingmenu.css', rel='stylesheet')
+    link(rel='stylesheet', href='http://designova.net/next/font-awesome/css/font-awesome.min.css')
+    link(href='http://designova.net/next/stylesheets/metro-panel.css', rel='stylesheet')
+    link(href='http://designova.net/next/stylesheets/style.css', rel='stylesheet')
+    link(type='text/css', media='screen', rel='stylesheet', href='./resume_src/awwwards.css')
+    script(src='./resume_src/modernizr.custom.menu.js')
+    script(src='./resume_src/modernizr.custom.quotes.js')
+    script(src='./resume_src/modernizr.custom.services.js')
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+      link(href='stylesheets/ie8.css', rel='stylesheet')
+  body(style='overflow-y: auto;')
+    #awwwards.left.black
+      a(href='http://www.awwwards.com/best-websites/next-by-designova', target='_blank') best websites of the world
+    // Preloader
+    #preloader(style='display: none;')
+      #status(style='display: none;')  
+    // Mobile Only Navigation - 2 types each for small device screens
+    // Sliding Navigation : starts
+    nav#sm.menu.visible-xs
+      .sm-wrap
+        h1.sm-logo next
+        i.icon-remove.menu-close
+        a.scroll-link(data-soffset='0', href='#welcome') Home
+        a.scroll-link(data-soffset='0', href='#about') About
+        a.scroll-link(data-soffset='0', href='#portfolio') Portfolio
+        a.scroll-link(data-soffset='0', href='#services') Services
+        a.scroll-link(data-soffset='0', href='#contact') Contact
+        a(href='http://designova.net/next/single-profile.html') Profile Page
+        a(href='http://designova.net/next/single-project.html') Project Page
+      // Navigation Trigger Button
+      #sm-trigger
+    // Sliding Navigation : ends
+    section#mastwrap.sliding
+      #sidebar-nav.sq-side-menu.hidden-xs.show-nav
+        ul
+          // Starting : Nav Block
+          li.next-bg-one(style='height: 91.8571428571429px;')
+            a#home-link.scroll-link(href='./resume_src/NEXT - Easy to use Portfolio - Retina Ready and Responsive HTML5 Template.html', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/00.png')
+              .second
+                .arrow-left
+                .content Home
+          // Ending : Nav Block
+          // Starting : Nav Block
+          li.next-bg-two(style='height: 91.8571428571429px;')
+            a#about-link.scroll-link.sq-active(href='#about', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/01.png')
+              .second
+                .arrow-left
+                .content About
+          // Ending : Nav Block
+          // Starting : Nav Block
+          li.next-bg-four(style='height: 91.8571428571429px;')
+            a#portfolio-link.scroll-link(href='#portfolio', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/06.png')
+              .second
+                .arrow-left
+                .content Portfolio
+          // Ending : Nav Block
+          // Starting : Nav Block
+          li.next-bg-three(style='height: 91.8571428571429px;')
+            a#services-link.scroll-link(href='#services', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/03.png')
+              .second
+                .arrow-left
+                .content Services
+          // Ending : Nav Block
+          // Starting : Nav Block
+          li.next-bg-six(style='height: 91.8571428571429px;')
+            a#contact-link.scroll-link(href='#contact', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/05.png')
+              .second
+                .arrow-left
+                .content Contact
+          // Ending : Nav Block
+          // Starting : Nav Block
+          li.next-bg-five(style='height: 91.8571428571429px;')
+            a#project-link(href='http://designova.net/next/single-project.html', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/02.png')
+              .second
+                .arrow-left
+                .content Project
+          // Ending : Nav Block
+          // Starting : Nav Block
+          li.next-bg-eight(style='height: 91.8571428571429px;')
+            a#profile-link(href='http://designova.net/next/single-profile.html', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='./resume_src/04.png')
+              .second
+                .arrow-left
+                .content Profile
+          // Ending : Nav Block
+        // end sq-side-menu ul
+      // end sq-side-menu
+      #logo.hidden-xs
+        img(alt='', title='', src='./resume_src/logo.png')
+      // HEADER : STARTS
+      // HOME : STARTS
+      section#welcome.clearfix.home2(data-stellar-background-ratio='1.7', style='min-height: 643px; background-position: 50% 50%;')
+        section.container
+          .row
+            article.col-md-12
+              h1(style='margin-top: 160.75px;')
+                | Next Inc
+                br
+                |               Creative Portfolio
+              h3 welcome to the world of
+              .ticker-wrap
+                #news_ticker
+                  ul.ticker-list
+                    li
+                      a(href='http://designova.net/next/index2.html#') Perfection
+                    li
+                      a(href='http://designova.net/next/index2.html#') Innovation
+                    li
+                      a(href='http://designova.net/next/index2.html#') Concepts
+                    li
+                      a(href='http://designova.net/next/index2.html#') Creations
+      // HOME : ENDS
+      // ABOUT : STARTS
+      section#about.page-section.navigation-fadeIn
+        section.container
+          .row
+            article.col-md-12.text-left
+              h2.page-heading about me
+              .liner
+                span
+          .row.add-top
+            article.col-md-12.text-left
+              p.welcome-text.fx.fx-rollIn.animated.rollIn
+                | I am John, a young web designer who focuses on crafting experiences and interfaces to make products easier to use.
+          .row.add-top
+            article.col-md-3.col-xs-6.text-center.skill-wrap
+              .chart1(data-percent='86')
+                | 86%
+                span Photshop
+            article.col-md-3.col-xs-6.text-center.skill-wrap
+              .chart2(data-percent='94')
+                | 94%
+                span PHP
+            article.col-md-3.col-xs-6.text-center.skill-wrap
+              .chart3(data-percent='79')
+                | 79%
+                span HTML5
+            article.col-md-3.col-xs-6.text-center.skill-wrap
+              .chart4(data-percent='88')
+                | 88%
+                span CorelDraw
+          .row.add-top.fx.fx-bounceIn.animated.bounceIn
+            article.col-md-5.col-xs-6.mob-hor-full.text-left
+              img.img-responsive(alt='', title='', src='./resume_src/profile.jpg')
+            article.col-md-7.col-xs-6.mob-hor-full.text-left
+              ul.be-social
+                li
+                  a(href='http://designova.net/next/index2.html#')
+                    span.next-bg-eight Follow my tweets on Twitter
+                li
+                  a(href='http://designova.net/next/index2.html#')
+                    span.next-bg-two Browse my recent Dribbble shots
+                li
+                  a(href='http://designova.net/next/index2.html#')
+                    span.next-bg-three Read my personal blog posts
+                li
+                  a(href='http://designova.net/next/index2.html#')
+                    span.next-bg-four Connect me via Facebook
+                li
+                  a(href='http://designova.net/next/single-project.html')
+                    span.next-bg-five Explore my projects
+      // ABOUT : ENDS
+      // QUOTES : STARTS
+      section#testimonials.page-section.next-bg-one
+        section.container
+          .row
+            article.col-md-12.text-left.fx.fx-flipInY
+              #cbp-qtrotator.cbp-qtrotator
+                .cbp-qtcontent(style='transition: opacity 700ms ease; -webkit-transition: opacity 700ms ease;')
+                  img(alt='', title='', src='./resume_src/01.jpg')
+                  blockquote
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
+                    footer Pino Caruso
+                .cbp-qtcontent.cbp-qtcurrent(style='transition: opacity 700ms ease; -webkit-transition: opacity 700ms ease;')
+                  img(alt='', title='', src='./resume_src/02.jpg')
+                  blockquote
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
+                    footer Albert Einstein
+                .cbp-qtcontent(style='transition: opacity 700ms ease; -webkit-transition: opacity 700ms ease;')
+                  img(alt='', title='', src='./resume_src/03.jpg')
+                  blockquote
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
+                    footer Leonardo Da Vinci
+                span.cbp-qtprogress(style='transition: width 8000ms linear; -webkit-transition: width 8000ms linear; width: 100%;')
+            // span : ends
+        // container:ends
+      // QUOTES : ENDS
+      // PORTFOLIO : STARTS
+      section#portfolio.page-section
+        section.container
+          .row
+            article.col-md-12.text-left
+              h2.page-heading.page-heading-alt my portfolio
+              .liner
+                span
+          .row.add-top.add-bottom
+            article.col-md-12.text-left
+              p.welcome-text.welcome-text-alt.fx.fx-bounceIn
+                | I have worked for more than 50 clients over last 2 years. Explore my best works here
+          .row.next-bg-eleven.common-pad
+            article.text-left
+              // Container element for a single portfolio item. Do not remove!
+              #item_container.clearfix
+              // Filter
+              #filter.clearfix
+                #filter_wrapper
+                  ul#portfolioFilter
+                    li.active
+                      a.all(href='http://designova.net/next/index2.html#') All
+                    li.separator /
+                    li
+                      a.category1(href='http://designova.net/next/index2.html#') Image Slider
+                    li.separator /
+                    li
+                      a.category2(href='http://designova.net/next/index2.html#') Youtube
+                    li.separator /
+                    li
+                      a.category3(href='http://designova.net/next/index2.html#') Vimeo
+                    li.separator /
+                    li
+                      a.category4(href='http://designova.net/next/index2.html#') Lightbox Photos
+                    li.separator /
+                    li
+                      a.category5(href='http://designova.net/next/index2.html#') Lightbox Video
+                    li.separator /
+                    li
+                      a.scroll-link(href='http://designova.net/next/index2.html#flickr-panel', data-soffset='90') Flickr
+              // End: Filter
+          .row
+            section#portfolio-wrap.clearfix
+              // Thumbnails
+              #portfolio_thumbs.fx.fx-slideInLeft
+                ul.sortablePortfolio.clearfix
+                  // 1st thumb
+                  li.simple-bg-one(data-type='category1')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/photo_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio1.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio1_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/photo_item.htm')
+                          span.next-bg-one Project TItle
+                      p
+                        span image slider
+                  // 2nd thumb
+                  li.simple-bg-two(data-type='category2')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/youtube_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio2.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio2_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/youtube_item.htm')
+                          span.next-bg-two Project TItle
+                      p
+                        span youtube
+                  // 3rd thumb
+                  li.simple-bg-three(data-type='category3')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/vimeo_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio3.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio3_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/vimeo_item.htm')
+                          span.next-bg-three Project TItle
+                      p
+                        span vimeo
+                  // 4th thumb
+                  li.simple-bg-four(data-type='category1')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/photo_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio4.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio4_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/photo_item.htm')
+                          span.next-bg-four Project TItle
+                      p
+                        span image slider
+                  // 5th thumb
+                  li.simple-bg-five(data-type='category4')
+                    // Thumbnail
+                    a(href='http://designova.net/next/images/portfolio_zoom/01.jpg', data-gal='prettyPhoto[gallery]')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio5.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio5_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a(href='http://designova.net/next/images/portfolio_zoom/01.jpg', data-gal='prettyPhoto[gallery]')
+                          span.next-bg-five Project TItle
+                      p
+                        span lightbox image
+                  // 6th thumb
+                  li.simple-bg-six(data-type='category2')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/youtube_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio6.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio6_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/youtube_item.htm')
+                          span.next-bg-six Project TItle
+                      p
+                        span youtube
+                  // 7th thumb
+                  li.simple-bg-seven(data-type='category5')
+                    // Thumbnail
+                    a(href='http://www.youtube.com/watch?v=1iIZeIy7TqM', data-gal='prettyPhoto[gallery]')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio7.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio7_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a(href='http://www.youtube.com/watch?v=1iIZeIy7TqM', data-gal='prettyPhoto[gallery]')
+                          span.next-bg-seven Project TItle
+                      p
+                        span lightbox video
+                  // 8th thumb
+                  li.simple-bg-eight(data-type='category1')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/photo_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio8.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio8_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/photo_item.htm')
+                          span.next-bg-eight Project TItle
+                      p
+                        span photography
+                  // 9th thumb
+                  li.simple-bg-one(data-type='category3')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/vimeo_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio9.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio9_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/vimeo_item.htm')
+                          span.next-bg-nine Project TItle
+                      p
+                        span vimeo
+                  // 10th thumb
+                  li.simple-bg-two(data-type='category2')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/youtube_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio10.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio10_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/youtube_item.htm')
+                          span.next-bg-ten Project TItle
+                      p
+                        span youtube
+                  // 11th thumb
+                  li.simple-bg-three(data-type='category1')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/photo_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio11.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio11_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/photo_item.htm')
+                          span.next-bg-eleven Project TItle
+                      p
+                        span photography
+                  // 12th thumb
+                  li.simple-bg-four(data-type='category2')
+                    // Thumbnail
+                    a.more_info(href='http://designova.net/next/youtube_item.htm')
+                      img(alt='simple', title='simple', src='./resume_src/portfolio12.jpg')
+                      img.rollover(alt='simple', title='simple', src='./resume_src/portfolio12_rollover.jpg')
+                    // Info
+                    .item_info
+                      h3
+                        a.more_info(href='http://designova.net/next/youtube_item.htm')
+                          span.next-bg-twelve Project TItle
+                      p
+                        span youtube
+              // End: Thumbnails
+      // PORTFOLIO : ENDS
+      // FLICKR : STARTS
+      section#flickr-panel.page-section.next-bg-twelve
+        section.container.fx.fx-flipInX
+          .row
+            article.text-left
+              h2.page-heading.page-heading-alt @flickr
+              .liner
+                span
+          .row.add-top
+            article.text-left
+              // FLICKR FEED : STARTS
+              ul#flickr.feed.clearfix
+              // FLICKR FEED : ENDS
+            // span : ends
+      // FLICKR : ENDS
+      // SERVICES : STARTS
+      section#services.page-section.next-bg-four
+        section.container
+          .row
+            article.col-md-12.text-left
+              h2.page-heading.page-heading-alt my services
+              .liner
+                span
+          .row.add-top.add-bottom
+            article.col-md-12.text-left
+              p.welcome-text.welcome-text-alt.fx.fx-slideInRight
+                | I offer premium services, I can produce quality websites, designs, apps and artworks
+          .row.add-top
+            article.col-md-12
+              ul#rb-grid.rb-grid.clearfix
+                li.rb-span-2.next-bg-one
+                  h3 Web Design
+                  span.rb-temp HTML5 / CSS3/ JS
+                  img.service-thumb(alt='', title='', src='./resume_src/01(1).png')
+                  .rb-overlay
+                    span.rb-close close
+                    // service-content : starts
+                    .rb-week.clearfix.next-bg-one
+                      // service-matter : starts
+                      .service-matter
+                        span(style='font-size: 146px;') Web Design
+                        // carousel : starts
+                        #service-carousel-01.carousel.slide
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item.next.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/01(2).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/02(1).jpg')
+                              .carousel-caption
+                            .item.active.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/03(1).jpg')
+                              .carousel-caption
+                          // Wrapper for slides : ends
+                        // carousel : ends
+                      // service-matter : ends
+                      // service-info:starts
+                      .service-info
+                        h5.service-spec HTML5 / CSS3/ JS
+                        h3 Service Overview
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
+                      // service-info:ends
+                    // service-content : ends
+                  // rb : ends
+                li.next-bg-two
+                  h3 Print Design
+                  span.rb-temp Photoshop
+                  img.service-thumb(alt='', title='', src='./resume_src/02(2).png')
+                  .rb-overlay
+                    span.rb-close close
+                    // service-content : starts
+                    .rb-week.clearfix.next-bg-two
+                      // service-matter : starts
+                      .service-matter
+                        span(style='font-size: 146px;') Print Design
+                        // carousel : starts
+                        #service-carousel-02.carousel.slide
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item.active
+                              img.service-spec-img(alt='', title='', src='./resume_src/01(2).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/02(1).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/03(1).jpg')
+                              .carousel-caption
+                          // Wrapper for slides : ends
+                        // carousel : ends
+                      // service-matter : ends
+                      // service-info:starts
+                      .service-info
+                        h5.service-spec Photoshop
+                        h3 Service Overview
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
+                      // service-info:ends
+                    // service-content : ends
+                  // rb : ends
+                li.next-bg-three
+                  h3 Logo Brand
+                  span.rb-temp CorelDraw
+                  img.service-thumb(alt='', title='', src='./resume_src/03(2).png')
+                  .rb-overlay
+                    span.rb-close close
+                    // service-content : starts
+                    .rb-week.clearfix.next-bg-three
+                      // service-matter : starts
+                      .service-matter
+                        span(style='font-size: 146px;') Logo Brand
+                        // carousel : starts
+                        #service-carousel-03.carousel.slide
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item.next.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/01(2).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/02(1).jpg')
+                              .carousel-caption
+                            .item.active.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/03(1).jpg')
+                              .carousel-caption
+                          // Wrapper for slides : ends
+                        // carousel : ends
+                      // service-matter : ends
+                      // service-info:starts
+                      .service-info
+                        h5.service-spec CorelDraw
+                        h3 Service Overview
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
+                      // service-info:ends
+                    // service-content : ends
+                  // rb : ends
+                li.rb-span-4.next-bg-six
+                  h3 CMS Site
+                  span.rb-temp PHP / WordPress / Joomla
+                  img.service-thumb(alt='', title='', src='./resume_src/04(1).png')
+                  .rb-overlay
+                    span.rb-close close
+                    // service-content : starts
+                    .rb-week.clearfix.next-bg-six
+                      // service-matter : starts
+                      .service-matter
+                        span(style='font-size: 146px;') CMS Site
+                        // carousel : starts
+                        #service-carousel-04.carousel.slide
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/01(2).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/02(1).jpg')
+                              .carousel-caption
+                            .item.active
+                              img.service-spec-img(alt='', title='', src='./resume_src/03(1).jpg')
+                              .carousel-caption
+                          // Wrapper for slides : ends
+                        // carousel : ends
+                      // service-matter : ends
+                      // service-info:starts
+                      .service-info
+                        h5.service-spec PHP / WordPress / Joomla
+                        h3 Service Overview
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
+                      // service-info:ends
+                    // service-content : ends
+                  // rb : ends
+                li.rb-span-2.next-bg-five
+                  h3 Web Apps
+                  span.rb-temp Python / RoR
+                  img.service-thumb(alt='', title='', src='./resume_src/05(1).png')
+                  .rb-overlay
+                    span.rb-close close
+                    // service-content : starts
+                    .rb-week.clearfix.next-bg-five
+                      // service-matter : starts
+                      .service-matter
+                        span(style='font-size: 146px;') Web Apps
+                        // carousel : starts
+                        #service-carousel-05.carousel.slide
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item.next.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/01(2).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/02(1).jpg')
+                              .carousel-caption
+                            .item.active.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/03(1).jpg')
+                              .carousel-caption
+                          // Wrapper for slides : ends
+                        // carousel : ends
+                      // service-matter : ends
+                      // service-info:starts
+                      .service-info
+                        h5.service-spec Python / RoR
+                        h3 Service Overview
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
+                      // service-info:ends
+                    // service-content : ends
+                  // rb : ends
+                li.rb-span-2.next-bg-eight
+                  h3 Mobile Apps
+                  span.rb-temp iOS / Android
+                  img.service-thumb(alt='', title='', src='./resume_src/06(1).png')
+                  .rb-overlay
+                    span.rb-close close
+                    // service-content : starts
+                    .rb-week.clearfix.next-bg-eight
+                      // service-matter : starts
+                      .service-matter
+                        span(style='font-size: 146px;') Mobile Apps
+                        // carousel : starts
+                        #service-carousel-06.carousel.slide
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item.next.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/01(2).jpg')
+                              .carousel-caption
+                            .item
+                              img.service-spec-img(alt='', title='', src='./resume_src/02(1).jpg')
+                              .carousel-caption
+                            .item.active.left
+                              img.service-spec-img(alt='', title='', src='./resume_src/03(1).jpg')
+                              .carousel-caption
+                          // Wrapper for slides : ends
+                        // carousel : ends
+                      // service-matter : ends
+                      // service-info:starts
+                      .service-info
+                        h5.service-spec iOS / Android
+                        h3 Service Overview
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
+                      // service-info:ends
+                    // service-content : ends
+                  // rb : ends
+            // span : ends
+        // container:ends
+      // SERVICES : ENDS
+      // CONTACT : STARTS
+      section#contact.page-section
+        section.container
+          .row
+            article.col-md-12.text-left
+              h2.page-heading.page-heading-alt contact me
+              .liner
+                span
+          .row.add-top.add-bottom
+            article.col-md-12.text-left
+              p.welcome-text.welcome-text-alt.fx.fx-slideInDown
+                | I will reply to each and every email. If you have projects feel free to call me anytime
+          .row.add-top.add-bottom
+            article.col-md-12.contact-panel.fx.fx-rollIn
+              .row
+                article.col-md-12.text-center
+                  #fname.alert.alert-error.error(style='display: none;')
+                    | Name must not be empty
+                  #fmail.alert.alert-error.error(style='display: none;')
+                    | Please provide a valid email
+                  #fmsg.alert.alert-error.error(style='display: none;')
+                    | Message should not be empty
+              form#contactForm(name='myform', action='http://designova.net/next/sendcontact.php', enctype='multipart/form-data', method='post')
+                .row.add-top-small
+                  article.col-md-6
+                    input#name(size='100', type='text', name='name', placeholder='Name')
+                  article.col-md-6
+                    input#email(type='text', size='30', name='email', placeholder='email')
+                .row.add-top-small
+                  article.col-md-12
+                    textarea#msg(rows='3', cols='40', name='message', placeholder='Message')
+                    button#submit.btn.btn-next.add-top-half(type='submit', name='submit') Send Message
+      // CONTACT : ENDS
+      // ADDRESS-PANEL : STARTS
+      section#address-panel.page-section
+        section.container
+          .row
+            article.col-md-12.text-left
+              h2.page-heading connect me
+              .liner
+                span
+          .row.add-top
+            article.col-md-12.text-left.fx.fx-flipInX
+              p.welcome-text
+                | john doe
+                br
+                | box #24, kenfield
+                br
+                | dublin, ireland
+          .row.add-top.connect.fx.fx-flipInY
+            article.col-md-4.text-left
+              h3 +012.345.6789
+            article.col-md-4.text-center
+              h3 mail@johndoe.me
+            article.col-md-4.text-right
+              h3 johndoe@skype
+          .row.add-top-half.add-bottom
+            article.col-md-12.social-block.text-left
+              a(href='http://designova.net/next/index2.html#')
+                img(alt='next', title='next', src='./resume_src/01(3).png')
+              a(href='http://designova.net/next/index2.html#')
+                img(alt='next', title='next', src='./resume_src/02(3).png')
+              a(href='http://designova.net/next/index2.html#')
+                img(alt='next', title='next', src='./resume_src/03(3).png')
+              a(href='http://designova.net/next/index2.html#')
+                img(alt='next', title='next', src='./resume_src/04(2).png')
+      // ADDRESS-PANEL   : ENDS
+      // TWEET-FEED : STARTS
+      section#tweet-feed.page-section
+        section.container
+          .row
+            article.col-md-12.text-left
+              h2.page-heading.page-heading-alt @twitter
+              .liner
+                span
+          .row.add-top.add-bottom
+            article.col-md-12.text-left.fx.fx-tada
+              article#ticker.query
+                ul.tweet_list
+                  li.tweet_first.tweet_odd
+                    span.tweet_time
+                      a(href='http://twitter.com/designovastudio/status/586612424544886785', title='view tweet on twitter') about 2 days ago
+                    span.tweet_text
+                      | RT 
+                      span.at @
+                      a(href='http://twitter.com/crnacura') crnacura
+                      |  The smartest set of icons for designers & developers: Nucleo 
+                      a(href='https://nucleoapp.com/') nucleoapp.com
+                      a(href='http://twitter.com/crnacura/status/586578866539515904/photo/1') pic.twitter.com/UtxH4hHk2l
+                  li.tweet_even
+                    span.tweet_time
+                      a(href='http://twitter.com/designovastudio/status/586460820546002944', title='view tweet on twitter') about 3 days ago
+                    span.tweet_text
+                      | Check out Mystique – Creative One Page/Multipage WordPress Theme on 
+                      a.tweet_hashtag(href='http://search.twitter.com/search?q=&tag=EnvatoMarket&lang=all') #EnvatoMarket
+                      |  by 
+                      span.at @
+                      a(href='http://twitter.com/DistinctThemes') DistinctThemes
+                      |  via 
+                      span.at @
+                      a(href='http://twitter.com/unbrandedco') unbrandedco
+                      a(href='http://themeforest.net/item/mystique-creative-one-pagemultipage-theme/11057033?ref=designova') themeforest.net/item/mystique-…
+                  li.tweet_odd
+                    span.tweet_time
+                      a(href='http://twitter.com/designovastudio/status/585127278616674304', title='view tweet on twitter') about 6 days ago
+                    span.tweet_text
+                      | Our HTML support system experiences a delay in processing pending tickets after Easter holidays. We will sort this out very soon. Thank you.
+                  li.tweet_even
+                    span.tweet_time
+                      a(href='http://twitter.com/designovastudio/status/585126808472969216', title='view tweet on twitter') about 6 days ago
+                    span.tweet_text
+                      | Our latest template is now in Weekly Popular List at 
+                      a.tweet_hashtag(href='http://search.twitter.com/search?q=&tag=themeforest&lang=all') #themeforest
+                      | , 'OTTO - Seamless Multi-Concept Portfolio Template' 
+                      a(href='http://themeforest.net/item/otto-seamless-multiconcept-portfolio-template/10946713?ref=designova') themeforest.net/item/otto-seam…
+                  li.tweet_odd
+                    span.tweet_time
+                      a(href='http://twitter.com/designovastudio/status/583708504550014980', title='view tweet on twitter') about 10 days ago
+                    span.tweet_text
+                      | RT 
+                      span.at @
+                      a(href='http://twitter.com/VandelayDesign') VandelayDesign
+                      |  20 Signs You Might Be a Designer 
+                      a(href='http://buff.ly/1EKtxEz') buff.ly/1EKtxEz
+                      a(href='http://twitter.com/VandelayDesign/status/583705546529906688/photo/1') pic.twitter.com/Vc8TLt7udQ
+      // TWEET-FEED  : ENDS
+      // FOOTER : STARTS
+      footer#mastfoot
+        section.container
+          .row.foot-border
+            article.col-md-12.credits.text-center
+              img(alt='', title='', src='./resume_src/foot-logo.png')
+              h3 Built by Designova
+          .row
+            article.col-md-6.credits.text-left
+              p
+                | Copyright © 2013 Next. 
+                br
+                | All rights reserved
+            article.col-md-6.foot-icons.text-right
+              ul.clearfix.text-right
+                li
+                  a(href='http://designova.net/next/index2.html#')
+                    img(alt='', title='', src='./resume_src/01(4).png')
+                li
+                  a(href='http://designova.net/next/index2.html#')
+                    img(alt='', title='', src='./resume_src/02(4).png')
+    // mastwrap : ends
+    script(src='./resume_src/jquery-1.9.1.min.js', type='text/javascript')
+    script(src='./resume_src/jquery.easing.1.3.js', type='text/javascript')
+    script(src='./resume_src/bootstrap.js')
+    script(src='./resume_src/bootstrap.min.js')
+    script(src='./resume_src/responsive-nav.js', type='text/javascript')
+    script(src='./resume_src/jquery.stellar.js')
+    script(src='./resume_src/prettyPhoto.js')
+    script(src='./resume_src/flexslider.js')
+    script(src='./resume_src/waypoints.min.js')
+    script(src='./resume_src/jquery.tweet.js')
+    script(src='./resume_src/portfolio.js')
+    script(src='./resume_src/form-validation.js')
+    script(src='./resume_src/responsive-nav.js')
+    script(src='./resume_src/jquery.easy-pie-chart.js')
+    script(src='./resume_src/jquery.cbpQTRotator.js')
+    script(src='./resume_src/classie.js')
+    script(src='./resume_src/jquery.fittext.js')
+    script(src='./resume_src/jquery.flickr.js')
+    script(src='./resume_src/boxgrid.js')
+    script(src='./resume_src/retina.js')
+    script(src='./resume_src/preloader.js')
+    script(src='./resume_src/effects.js')
+    script(src='./resume_src/scroll.js')
+    script(src='./resume_src/slidingmenu.js')
+    script(src='./resume_src/script.js')
+    script.
+      $(function() {
+      Boxgrid.init();
+      });
+    script.
+    script.
+      var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
+      animate: true, // Boolean: Use CSS3 transitions, true or false
+      transition: 400, // Integer: Speed of the transition, in milliseconds
+      label: "Menu", // String: Label for the navigation toggle
+      insert: "after", // String: Insert the toggle before or after the navigation
+      customToggle: "", // Selector: Specify the ID of a custom toggle
+      openPos: "relative", // String: Position of the opened nav, relative or static
+      jsClass: "js", // String: 'JS enabled' class which is added to <html> el
+      init: function(){}, // Function: Init callback
+      open: function(){}, // Function: Open callback
+      close: function(){} // Function: Close callback
+      });
+    script.
+      // var mySwiper = new Swiper('.swiper-container',{
+      // mode:'horizontal',
+      // pagination: false,
+      // slidesPerView: 3,
+      // loop: true,
+      // calculateHeight: true
+      // });
+    script.
+      $( function() {
+      $( '#cbp-qtrotator' ).cbpQTRotator();
+      } );
