@@ -6,5 +6,5 @@ public/components/*
 public/fonts/*
 public/images/*
 public/upload_imgs/*
+public/resume_src/*
 npm-debug.log
-views/resume_src/*
