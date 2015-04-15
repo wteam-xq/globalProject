@@ -35,8 +35,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
       link(href='stylesheets/ie8.css', rel='stylesheet')
   body(style='overflow-y: auto;')
-    #preloader(style='display: none;')
-      #status(style='display: none;')  
+    #preloader
+      #status
     nav#sm.menu.visible-xs
       .sm-wrap
         h1.sm-logo next
@@ -99,9 +99,6 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                 .arrow-left
                 .content Contact
         
-      #logo.hidden-xs
-        img(alt='', title='', src='/resume_src/logo.png')
-      // HEADER : STARTS
       // HOME : STARTS
       section#welcome.clearfix.home2(data-stellar-background-ratio='1.7', style='min-height: 643px; background-position: 50% 50%;')
         section.container
@@ -775,7 +772,7 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
     script(src='/resume_src/jquery.cbpQTRotator.js')
     script(src='/resume_src/classie.js')
     script(src='/resume_src/jquery.fittext.js')
-    script(src='/resume_src/jquery.flickr.js')
+    //- script(src='/resume_src/jquery.flickr.js')
     script(src='/resume_src/boxgrid.js')
     script(src='/resume_src/retina.js')
     script(src='/resume_src/preloader.js')
@@ -801,14 +798,6 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
       open: function(){}, // Function: Open callback
       close: function(){} // Function: Close callback
       });
-    script.
-      // var mySwiper = new Swiper('.swiper-container',{
-      // mode:'horizontal',
-      // pagination: false,
-      // slidesPerView: 3,
-      // loop: true,
-      // calculateHeight: true
-      // });
     script.
       $( function() {
       $( '#cbp-qtrotator' ).cbpQTRotator();
