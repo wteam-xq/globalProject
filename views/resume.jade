@@ -12,26 +12,26 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
     link(href='/components/bootstrap.min.css', rel='stylesheet')
     link(href='/components/bootstrap-theme.min.css', rel='stylesheet')
     link(href='/stylesheets/resume_index.css', rel='stylesheet')
-    //- link(href='/resume_src/extension.css', rel='stylesheet')
-    //- link(href='/resume_src/typography.css', rel='stylesheet')
-    link(href='/resume_src/responsive-nav.css', rel='stylesheet')
-    link(href='/resume_src/prettyPhoto.css', rel='stylesheet')
-    link(href='/resume_src/jquery.tweet.css', rel='stylesheet')
-    link(href='/resume_src/quotes.css', rel='stylesheet')
-    link(href='/resume_src/services.css', rel='stylesheet')
-    link(href='/resume_src/animate.css', rel='stylesheet')
-    link(href='/resume_src/effects.css', rel='stylesheet')
-    link(href='/resume_src/jquery.easy-pie-chart.css', rel='stylesheet')
-    link(href='/resume_src/sidemenu.css', rel='stylesheet')
-    link(href='/resume_src/slidingmenu.css', rel='stylesheet')
-    link(href='/resume_src/font-awesome.min.css', rel='stylesheet')
-    link(href='/resume_src/metro-panel.css', rel='stylesheet')
-    link(href='/resume_src/style.css', rel='stylesheet')
-    link(href='/resume_src/awwwards.css', type='text/css', media='screen', rel='stylesheet')
-
-    script(src='/resume_src/modernizr.custom.menu.js')
-    script(src='/resume_src/modernizr.custom.quotes.js')
-    script(src='/resume_src/modernizr.custom.services.js')
+    link(href='/components/responsive-nav.css', rel='stylesheet')
+    link(href='/components/prettyPhoto.css', rel='stylesheet')
+    //- merge to "resume_index.css" or remove
+    //- link(href='/resume_src/jquery.tweet.css', rel='stylesheet')
+    //- link(href='/resume_src/quotes.css', rel='stylesheet') 
+    //- link(href='/resume_src/services.css', rel='stylesheet')
+    //- link(href='/resume_src/effects.css', rel='stylesheet')
+    //- link(href='/resume_src/sidemenu.css', rel='stylesheet')
+    //- link(href='/resume_src/metro-panel.css', rel='stylesheet')
+    //- link(href='/resume_src/style.css', rel='stylesheet')
+    //- link(href='/resume_src/awwwards.css', type='text/css', media='screen', rel='stylesheet')
+    link(href='/components/animate.css', rel='stylesheet')
+    link(href='/components/jquery.easy-pie-chart.css', rel='stylesheet')
+    link(href='/components/slidingmenu.css', rel='stylesheet')
+    link(href='/components/font-awesome.min.css', rel='stylesheet')
+    
+    //- http://www.cnblogs.com/NetSos/archive/2012/03/26/2418053.html  检测浏览器支持功能
+    script(src='/components/modernizr.custom.menu.js')
+    script(src='/components/modernizr.custom.quotes.js')
+    script(src='/components/modernizr.custom.services.js')
     //if lt IE 9
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
       link(href='stylesheets/ie8.css', rel='stylesheet')
@@ -172,34 +172,35 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                   a(href='http://designova.net/next/single-project.html')
                     span.next-bg-five Explore my projects
       // ABOUT : ENDS
+
       // QUOTES : STARTS
       section#testimonials.page-section.next-bg-one
         section.container
           .row
             article.col-md-12.text-left.fx.fx-flipInY
               #cbp-qtrotator.cbp-qtrotator
-                .cbp-qtcontent(style='transition: opacity 700ms ease; -webkit-transition: opacity 700ms ease;')
+                .cbp-qtcontent
                   img(alt='', title='', src='/resume_src/01.jpg')
                   blockquote
                     p
                       | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
                     footer Pino Caruso
-                .cbp-qtcontent.cbp-qtcurrent(style='transition: opacity 700ms ease; -webkit-transition: opacity 700ms ease;')
+                .cbp-qtcontent
                   img(alt='', title='', src='/resume_src/02.jpg')
                   blockquote
                     p
                       | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
                     footer Albert Einstein
-                .cbp-qtcontent(style='transition: opacity 700ms ease; -webkit-transition: opacity 700ms ease;')
+                .cbp-qtcontent
                   img(alt='', title='', src='/resume_src/03.jpg')
                   blockquote
                     p
                       | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
                     footer Leonardo Da Vinci
-                span.cbp-qtprogress(style='transition: width 8000ms linear; -webkit-transition: width 8000ms linear; width: 100%;')
-            // span : ends
-        // container:ends
+                span.cbp-qtprogress
+            
       // QUOTES : ENDS
+
       // PORTFOLIO : STARTS
       section#portfolio.page-section
         section.container
@@ -719,8 +720,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                 img(alt='next', title='next', src='/resume_src/03(3).png')
               a(href='http://designova.net/next/index2.html#')
                 img(alt='next', title='next', src='/resume_src/04(2).png')
-      // ADDRESS-PANEL   : ENDS
-      // TWEET-FEED : STARTS
+      
+      // TWEET-FEED : STARTS 调用twitter , 本人用不着将改动
       section#tweet-feed.page-section
         section.container
           .row
@@ -757,28 +758,30 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                     img(alt='', title='', src='/resume_src/02(4).png')
     // mastwrap : ends
     script(src='/components/jquery.min.js', type='text/javascript')
-    script(src='/resume_src/jquery.easing.1.3.js', type='text/javascript')
+    script(src='/components/jquery.easing.1.3.js', type='text/javascript')
     script(src='/components/bootstrap.min.js')
-    script(src='/resume_src/responsive-nav.js', type='text/javascript')
-    script(src='/resume_src/jquery.stellar.js')
-    script(src='/resume_src/prettyPhoto.js')
-    script(src='/resume_src/flexslider.js')
-    script(src='/resume_src/waypoints.min.js')
-    script(src='/resume_src/jquery.tweet.js')
-    script(src='/resume_src/portfolio.js')
-    script(src='/resume_src/form-validation.js')
-    script(src='/resume_src/responsive-nav.js')
-    script(src='/resume_src/jquery.easy-pie-chart.js')
-    script(src='/resume_src/jquery.cbpQTRotator.js')
-    script(src='/resume_src/classie.js')
-    script(src='/resume_src/jquery.fittext.js')
-    script(src='/resume_src/boxgrid.js')
-    script(src='/resume_src/retina.js')
-    script(src='/resume_src/preloader.js')
-    script(src='/resume_src/effects.js')
-    script(src='/resume_src/scroll.js')
-    script(src='/resume_src/slidingmenu.js')
-    script(src='/resume_src/script.js')
+    script(src='/components/responsive-nav.js', type='text/javascript')
+    script(src='/components/jquery.stellar.js')
+    script(src='/components/prettyPhoto.js')
+    script(src='/components/flexslider.js')
+    script(src='/components/waypoints.min.js')
+    //- merge to resume_front.js or remove
+    //- script(src='/resume_src/portfolio.js')
+    //- script(src='/resume_src/form-validation.js')
+    //- script(src='/resume_src/preloader.js') 
+    //- script(src='/resume_src/effects.js') 
+    //- script(src='/resume_src/scroll.js')
+    //- script(src='/resume_src/slidingmenu.js')
+    //- script(src='/resume_src/classie.js') remove
+    //- script(src='/resume_src/script.js')
+    script(src='/components/responsive-nav.js')
+    script(src='/components/jquery.easy-pie-chart.js')
+    //- 模块滚动插件
+    script(src='/components/jquery.cbpQTRotator.js')
+    script(src='/components/jquery.fittext.js')
+    script(src='/javascripts/resume_front/boxgrid.js')
+    script(src='/components/retina.js')
+    script(src='/javascripts/resume_front/resume.js')
     script.
       $(function() {
       Boxgrid.init();
