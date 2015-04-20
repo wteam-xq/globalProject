@@ -44,23 +44,23 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
       #sidebar-nav.sq-side-menu.hidden-xs.show-nav
         ul
           li.next-bg-one
-            a#home-link.scroll-link(href='#welcome', data-soffset='0')
+            a#home-link.scroll-link.sq-active(href='#welcome', data-soffset='0')
               .first
                 .arrow-right
                 .content
                   img(alt='', title='', src='/resume_src/00.png')
               .second
                 .arrow-left
-                .content Home
+                .content 首页
           li.next-bg-two
-            a#about-link.scroll-link.sq-active(href='#about', data-soffset='0')
+            a#about-link.scroll-link(href='#about', data-soffset='0')
               .first
                 .arrow-right
                 .content
                   img(alt='', title='', src='/resume_src/01.png')
               .second
                 .arrow-left
-                .content About
+                .content 个人简介
           li.next-bg-four
             a#portfolio-link.scroll-link(href='#portfolio', data-soffset='0')
               .first
@@ -69,27 +69,27 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                   img(alt='', title='', src='/resume_src/06.png')
               .second
                 .arrow-left
-                .content Portfolio
+                .content 项目简介
           li.next-bg-three
             a#services-link.scroll-link(href='#services', data-soffset='0')
-              .first
-                .arrow-right
-                .content
-                  img(alt='', title='', src='/resume_src/03.png')
-              .second
-                .arrow-left
-                .content Services
-          li.next-bg-six
-            a#contact-link.scroll-link(href='#contact', data-soffset='0')
               .first
                 .arrow-right
                 .content
                   img(alt='', title='', src='/resume_src/05.png')
               .second
                 .arrow-left
-                .content Contact
+                .content 联系方式
+          li.next-bg-six
+            a#contact-link.scroll-link(href='#contact', data-soffset='0')
+              .first
+                .arrow-right
+                .content
+                  img(alt='', title='', src='/resume_src/02.png')
+              .second
+                .arrow-left
+                .content 我的好友
         
-      // HOME : STARTS
+      // HOME : 首页
       section#welcome.clearfix.home2(data-stellar-background-ratio='1.7', style='min-height: 643px; background-position: 50% 50%;')
         section.container
           .row
@@ -110,8 +110,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                       a(href='http://designova.net/next/index2.html#') Concepts
                     li
                       a(href='http://designova.net/next/index2.html#') Creations
-      // HOME : ENDS
-      // ABOUT : STARTS
+      
+      // ABOUT : 个人简介
       section#about.page-section.navigation-fadeIn
         section.container
           .row
@@ -146,23 +146,22 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
             article.col-md-7.col-xs-6.mob-hor-full.text-left
               ul.be-social
                 li
-                  a(href='http://designova.net/next/index2.html#')
+                  a(href='#')
                     span.next-bg-eight Follow my tweets on Twitter
                 li
-                  a(href='http://designova.net/next/index2.html#')
+                  a(href='#')
                     span.next-bg-two Browse my recent Dribbble shots
                 li
-                  a(href='http://designova.net/next/index2.html#')
+                  a(href='#')
                     span.next-bg-three Read my personal blog posts
                 li
-                  a(href='http://designova.net/next/index2.html#')
+                  a(href='#')
                     span.next-bg-four Connect me via Facebook
                 li
-                  a(href='http://designova.net/next/single-project.html')
+                  a(href='#')
                     span.next-bg-five Explore my projects
-      // ABOUT : ENDS
 
-      // QUOTES : STARTS
+      // QUOTES : 客户评价
       section#testimonials.page-section.next-bg-one
         section.container
           .row
@@ -187,10 +186,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                       | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra.
                     footer Leonardo Da Vinci
                 span.cbp-qtprogress
-            
-      // QUOTES : ENDS
 
-      // PORTFOLIO : STARTS
+      // PORTFOLIO : 作品集
       section#portfolio.page-section
         section.container
           .row
@@ -393,8 +390,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                       p
                         span youtube
               // End: Thumbnails
-      // PORTFOLIO : ENDS
-      // FLICKR : STARTS
+      
+      // FLICKR : 服务器图集展示（可删）
       section#flickr-panel.page-section.next-bg-twelve
         section.container.fx.fx-flipInX
           .row
@@ -406,9 +403,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
             article.text-left
               // FLICKR FEED : STARTS
               ul#flickr.feed.clearfix
-              // FLICKR FEED : ENDS
-            // span : ends
-      // FLICKR : ENDS
+
+      
       // SERVICES : STARTS
       section#services.page-section.next-bg-four
         section.container
@@ -642,7 +638,7 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                   // rb : ends
             // span : ends
         // container:ends
-      // SERVICES : ENDS
+      
       // CONTACT : STARTS
       section#contact.page-section
         section.container
@@ -675,7 +671,7 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                   article.col-md-12
                     textarea#msg(rows='3', cols='40', name='message', placeholder='Message')
                     button#submit.btn.btn-next.add-top-half(type='submit', name='submit') Send Message
-      // CONTACT : ENDS
+     
       // ADDRESS-PANEL : STARTS
       section#address-panel.page-section
         section.container
@@ -709,20 +705,6 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                 img(alt='next', title='next', src='/resume_src/03(3).png')
               a(href='http://designova.net/next/index2.html#')
                 img(alt='next', title='next', src='/resume_src/04(2).png')
-      
-      // TWEET-FEED : STARTS 调用twitter , 本人用不着将改动
-      section#tweet-feed.page-section
-        section.container
-          .row
-            article.col-md-12.text-left
-              h2.page-heading.page-heading-alt @twitter
-              .liner
-                span
-          .row.add-top.add-bottom
-            article.col-md-12.text-left.fx.fx-tada
-              //- article#ticker.query
-              //-   ul.tweet_list
-              //-     li.tweet_first.tweet_odd
                   
       // FOOTER : STARTS
       footer#mastfoot
