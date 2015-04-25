@@ -37,7 +37,7 @@ module.exports = new Db(
 * 方案： windows上用bcrypt-nodejs 替代 bcrypt, 另 只能用同步加密法
 
 * 03-13 mongoose Schema.pre('save', callback)数据更新时， 该方法不会被调用。。。
-* 方案： 更新不用 update 方法， 改用save方法；（先findById 然后 用 underscore覆盖）
+* 方案： 更新不用 update 方法， 改用save方法；（先findById 然后 用 underscore新继承对象覆盖）
 
 * 03-17  express-session 模块， 保存的内容req.session.xxx, nodejs 重启后消失。。。
 * 方案： 将session 数据存在cookies 、 内存 、redis 或 mongodb中；
@@ -53,7 +53,7 @@ module.exports = new Db(
 
 * 04-18 整理 简历模板调用的样式、脚本库：
   * font-awesome.css  字体图标样式文件
-  * animate.css css3 实现动画效果的 样式库     
+  * animate.css css3 实现动画效果的 样式库
   * prettyPhoto.js  图片特效插件
   * jquery.easing.js  实现图片阴影效果
   * sidemenu.js jquery 模拟android 菜单效果（移动端显示）
@@ -63,3 +63,5 @@ module.exports = new Db(
   * flexslider.js 全屏焦点图轮播切换插件
   * waypoints.js  滚动监听插件
   * retina.js   使用高分辨率 图片替代 低分辨率图片插件
+
+* 04-25 手机二维码更新： 指向阿里云服务器， 二维码位置优化；

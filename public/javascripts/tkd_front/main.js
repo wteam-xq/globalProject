@@ -203,7 +203,10 @@ $(document).ready(function(){
     had_event = $this.attr('data-had-event');
 
     if (!$dockerPopover.hasClass('in')){
-      $dockerPopover.css({'left': pop_of_left+'px'});
+      $dockerPopover.css({
+        'left': pop_of_left+'px',
+        'top': '33%'
+      });
       $dockerPopover.addClass('in');
     }else{
       $dockerPopover.removeClass('in');

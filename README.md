@@ -20,7 +20,7 @@ git clone https://github.com/wteam-xq/globalProject
   * 手动安装mongodb, 下载地址： [mongodb下载](http://pan.baidu.com/s/1qWG5Lr2)
   * mongodb 配置以及设置成windows服务：[配置mongodb](http://blog.csdn.net/liusong0605/article/details/10574863)
   * mongodb shell 控制台使用: [mongodb 基本命令](http://www.cnblogs.com/xusir/archive/2012/12/24/2830957.html)
-* 写入一条用户数据， 用于登录网站后台；
+
 
 ```Bash
 mongo
@@ -35,8 +35,8 @@ db.createCollection("users")
 db.createCollection("tkdrules")
 { "ok" : 1}
 
-db.users.save({name:'xq',email:'123@qq.com',age:26,password:'123123',job:'runner',hobby:'ftg'})
 ```
+
 *ps: 如果配置 mongodb 成window服务 遇到“服务名无效” 的问题， 请单击左下角"开始"图标-》所有程序-》附件-》右键“命令提示符” 以管理员身份运行*
 
 
@@ -53,4 +53,15 @@ npm start
 ```
 ```Bash
 node bin/www
+```
+
+* 首次进入后台创建用户， 需修改以下文件： globalProject/routes/admin.js
+* ps: 没使用自动重启模块的话， 修改完需重新启动项目
+```javascript
+//检查用户是否已登录(修改前)
+router.get('/*', checkLogin);
+
+
+//检查用户是否已登录（修改后）
+//router.get('/*', checkLogin);
 ```
