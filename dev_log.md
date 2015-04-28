@@ -14,6 +14,22 @@
   * 4.联系方式， 技术交流、项目交流、工作机会交流；
   * 5.我的好友， 朋友简介： 龙贱（android） 桌旗（游戏） 耀柱（ios） 惠乾（java）大熊（java） 俊华（游戏）  (待加...)
 
+* 04-18 整理 简历模板调用的样式、脚本库：
+  * font-awesome.css  字体图标样式文件
+  * animate.css css3 实现动画效果的 样式库
+  * prettyPhoto.js  图片特效插件
+  * jquery.easing.js  实现图片阴影效果
+  * sidemenu.js jquery 模拟android 菜单效果（移动端显示）
+  * responsive-nav.js 响应式插件（网页菜单支持移动平台）
+  * jquery.easy-pie-chart.js 显示百分比矢量图
+  * jquery.stellar.js 视觉差实现 插件
+  * flexslider.js 全屏焦点图轮播切换插件
+  * waypoints.js  滚动监听插件
+  * retina.js   使用高分辨率 图片替代 低分辨率图片插件
+
+* 04-25 手机二维码更新： 指向阿里云服务器， 二维码位置优化；
+* 04-28 个人网站 内容整理。。。
+
 
 #### 开发日志
 * 03-11 打开 microBlog 项目， 出现 “Please ensure that you set the default write concern for the database”提示！！
@@ -50,18 +66,3 @@ module.exports = new Db(
 
 * 04-04 使用mongoose 的 mongoose.model('tkdrule', TkdRuleSchema); 写入数据库时， 为什么会变成写入到tkdrules中去？
 * 解答：因为 mongoose.model(name,[schme],[collection],[skipInit]); 第一个参数的只是模型的名字并不是对应的数据库名。第三个参数才是对应的数据库表名。
-
-* 04-18 整理 简历模板调用的样式、脚本库：
-  * font-awesome.css  字体图标样式文件
-  * animate.css css3 实现动画效果的 样式库
-  * prettyPhoto.js  图片特效插件
-  * jquery.easing.js  实现图片阴影效果
-  * sidemenu.js jquery 模拟android 菜单效果（移动端显示）
-  * responsive-nav.js 响应式插件（网页菜单支持移动平台）
-  * jquery.easy-pie-chart.js 显示百分比矢量图
-  * jquery.stellar.js 视觉差实现 插件
-  * flexslider.js 全屏焦点图轮播切换插件
-  * waypoints.js  滚动监听插件
-  * retina.js   使用高分辨率 图片替代 低分辨率图片插件
-
-* 04-25 手机二维码更新： 指向阿里云服务器， 二维码位置优化；

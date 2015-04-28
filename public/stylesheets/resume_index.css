@@ -1196,7 +1196,8 @@ margin-bottom: 10px;
 }
 
 .next-bg-two{
-    background: #149CA8 !important;
+  background: #149CA8 !important;
+  /*background: #eee !important;*/
 }
 
 .next-bg-three{
@@ -1371,15 +1372,14 @@ font-weight: bold;
 }
 
 .welcome-text{
-    font-size: 62px;
-    line-height: 69px;
-font-family:"Open_Sans_L";
-    
-    font-weight: 200;
-    color: #999;
+  font-size: 45px;
+  line-height: 69px;
+  font-family:"Open_Sans_L";
+  font-weight: 200;
+  color: #999;
 }
 .welcome-text-alt{
-    color: #fff !important; 
+  color: #fff !important; 
 }
 
 /* ===================================*/
