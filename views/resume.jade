@@ -23,8 +23,8 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
     script(src='/components/modernizr.custom.quotes.js')
     script(src='/components/modernizr.custom.services.js')
     //if lt IE 9
-      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-      link(href='stylesheets/ie8.css', rel='stylesheet')
+      script(src='/components/html5.js')
+      //- link(href='stylesheets/ie8.css', rel='stylesheet')
   body(style='overflow-y: auto;')
     #preloader
       #status
@@ -96,72 +96,73 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
         section.container
           .row
             article.col-md-12
-              h1(style='margin-top: 160.75px;')
-                | Welcome to 
+              h2(style='margin-top: 160.75px;')
+                | 欢迎来到 
                 br
-                |               xzq's resume
-              h3 welcome to the world of
+                br
+                |               肖志强的主页
+              h3 技能关键字
               .ticker-wrap
                 #news_ticker
                   ul.ticker-list
                     li
-                      a(href='http://designova.net/next/index2.html#') Perfection
+                      a(href='http://www.w3school.com.cn/html5/index.asp' target='_blank') html5
                     li
-                      a(href='http://designova.net/next/index2.html#') Innovation
+                      a(href='http://jquery.com/' target='_blank') jquery
                     li
-                      a(href='http://designova.net/next/index2.html#') Concepts
+                      a(href='https://nodejs.org/' target='_blank') nodejs
                     li
-                      a(href='http://designova.net/next/index2.html#') Creations
+                      a(href='http://www.apjs.net/' target='_blank') angularjs
       
       // ABOUT : 个人简介
       section#about.page-section.navigation-fadeIn
         section.container
           .row
             article.col-md-12.text-left
-              h2.page-heading about me
+              h2.page-heading 个人简介
               .liner
                 span
           .row.add-top
             article.col-md-12.text-left
               p.welcome-text.fx.fx-rollIn.animated.rollIn
-                | I am John, a young web designer who focuses on crafting experiences and interfaces to make products easier to use.
+                | 我是肖志强,软件工程专业，喜欢前端、2年前端工作经验, 最近捣鼓 nodejs、angularjs、reactjs
           .row.add-top
             article.col-md-3.col-xs-6.text-center.skill-wrap
-              .chart1(data-percent='86')
-                | 86%
-                span Photshop
+              .chart1(data-percent='85')
+                | 85%
+                span jquery
             article.col-md-3.col-xs-6.text-center.skill-wrap
-              .chart2(data-percent='94')
-                | 94%
-                span PHP
+              .chart2(data-percent='90')
+                | 90%
+                span javascript
             article.col-md-3.col-xs-6.text-center.skill-wrap
-              .chart3(data-percent='79')
-                | 79%
-                span HTML5
+              .chart3(data-percent='75')
+                | 75%
+                span html5
             article.col-md-3.col-xs-6.text-center.skill-wrap
-              .chart4(data-percent='88')
-                | 88%
-                span CorelDraw
+              .chart4(data-percent='80')
+                | 80%
+                span nodejs
           .row.add-top.fx.fx-bounceIn.animated.bounceIn
             article.col-md-5.col-xs-6.mob-hor-full.text-left
-              img.img-responsive(alt='', title='', src='/resume_src/profile.jpg')
+              img.img-responsive(alt='', title='', src='/images/profile.jpg')
             article.col-md-7.col-xs-6.mob-hor-full.text-left
               ul.be-social
                 li
-                  a(href='#')
-                    span.next-bg-eight Follow my tweets on Twitter
+                  a(href='http://weibo.com/2126574834/profile?topnav=1&wvr=6#_rnd1430203717688' target='_blank')
+                    span.next-bg-eight 关注我的微博
                 li
-                  a(href='#')
-                    span.next-bg-two Browse my recent Dribbble shots
+                  a(href='http://www.cnblogs.com/wteam-xq/' target='_blank')
+                    span.next-bg-two 阅读我的博客
                 li
-                  a(href='#')
-                    span.next-bg-three Read my personal blog posts
+                  a(href='http://www.zhihu.com/people/xiao-qiang-85' target='_blank')
+                    span.next-bg-three 访问我的知乎
                 li
-                  a(href='#')
-                    span.next-bg-four Connect me via Facebook
+                  a(href='https://github.com/wteam-xq' target='_blank')
+                    span.next-bg-four fork我的代码
                 li
-                  a(href='#')
-                    span.next-bg-five Explore my projects
+                  a(href='http://120.24.68.145:8080/threeKingdoms/' target='_blank')
+                    span.next-bg-five 看看我最近上线的项目
 
       // PORTFOLIO : 我的项目
       section#portfolio.page-section
@@ -367,240 +368,6 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                         span youtube
               // End: Thumbnails
       
-      // SERVICES : 我的技能（服务）
-      section#services.page-section.next-bg-four
-        section.container
-          .row
-            article.col-md-12.text-left
-              h2.page-heading.page-heading-alt my services
-              .liner
-                span
-          .row.add-top.add-bottom
-            article.col-md-12.text-left
-              p.welcome-text.welcome-text-alt.fx.fx-slideInRight
-                | I offer premium services, I can produce quality websites, designs, apps and artworks
-          .row.add-top
-            article.col-md-12
-              ul#rb-grid.rb-grid.clearfix
-                li.rb-span-2.next-bg-one
-                  h3 Web Design
-                  span.rb-temp HTML5 / CSS3/ JS
-                  img.service-thumb(alt='', title='', src='/resume_src/01(1).png')
-                  .rb-overlay
-                    span.rb-close close
-                    // service-content : starts
-                    .rb-week.clearfix.next-bg-one
-                      // service-matter : starts
-                      .service-matter
-                        span(style='font-size: 146px;') Web Design
-                        // carousel : starts
-                        #service-carousel-01.carousel.slide
-                          // Wrapper for slides
-                          .carousel-inner
-                            .item.next.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/01(2).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/02(1).jpg')
-                              .carousel-caption
-                            .item.active.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/03(1).jpg')
-                              .carousel-caption
-                          // Wrapper for slides : ends
-                        // carousel : ends
-                      // service-matter : ends
-                      // service-info:starts
-                      .service-info
-                        h5.service-spec HTML5 / CSS3/ JS
-                        h3 Service Overview
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
-                      // service-info:ends
-                    // service-content : ends
-                  // rb : ends
-                li.next-bg-two
-                  h3 Print Design
-                  span.rb-temp Photoshop
-                  img.service-thumb(alt='', title='', src='/resume_src/02(2).png')
-                  .rb-overlay
-                    span.rb-close close
-                    // service-content : starts
-                    .rb-week.clearfix.next-bg-two
-                      // service-matter : starts
-                      .service-matter
-                        span(style='font-size: 146px;') Print Design
-                        // carousel : starts
-                        #service-carousel-02.carousel.slide
-                          // Wrapper for slides
-                          .carousel-inner
-                            .item.active
-                              img.service-spec-img(alt='', title='', src='/resume_src/01(2).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/02(1).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/03(1).jpg')
-                              .carousel-caption
-                          // Wrapper for slides : ends
-                        // carousel : ends
-                      // service-matter : ends
-                      // service-info:starts
-                      .service-info
-                        h5.service-spec Photoshop
-                        h3 Service Overview
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
-                      // service-info:ends
-                    // service-content : ends
-                  // rb : ends
-                li.next-bg-three
-                  h3 Logo Brand
-                  span.rb-temp CorelDraw
-                  img.service-thumb(alt='', title='', src='/resume_src/03(2).png')
-                  .rb-overlay
-                    span.rb-close close
-                    // service-content : starts
-                    .rb-week.clearfix.next-bg-three
-                      // service-matter : starts
-                      .service-matter
-                        span(style='font-size: 146px;') Logo Brand
-                        // carousel : starts
-                        #service-carousel-03.carousel.slide
-                          // Wrapper for slides
-                          .carousel-inner
-                            .item.next.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/01(2).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/02(1).jpg')
-                              .carousel-caption
-                            .item.active.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/03(1).jpg')
-                              .carousel-caption
-                          // Wrapper for slides : ends
-                        // carousel : ends
-                      // service-matter : ends
-                      // service-info:starts
-                      .service-info
-                        h5.service-spec CorelDraw
-                        h3 Service Overview
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
-                      // service-info:ends
-                    // service-content : ends
-                  // rb : ends
-                li.rb-span-4.next-bg-six
-                  h3 CMS Site
-                  span.rb-temp PHP / WordPress / Joomla
-                  img.service-thumb(alt='', title='', src='/resume_src/04(1).png')
-                  .rb-overlay
-                    span.rb-close close
-                    // service-content : starts
-                    .rb-week.clearfix.next-bg-six
-                      // service-matter : starts
-                      .service-matter
-                        span(style='font-size: 146px;') CMS Site
-                        // carousel : starts
-                        #service-carousel-04.carousel.slide
-                          // Wrapper for slides
-                          .carousel-inner
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/01(2).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/02(1).jpg')
-                              .carousel-caption
-                            .item.active
-                              img.service-spec-img(alt='', title='', src='/resume_src/03(1).jpg')
-                              .carousel-caption
-                          // Wrapper for slides : ends
-                        // carousel : ends
-                      // service-matter : ends
-                      // service-info:starts
-                      .service-info
-                        h5.service-spec PHP / WordPress / Joomla
-                        h3 Service Overview
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
-                      // service-info:ends
-                    // service-content : ends
-                  // rb : ends
-                li.rb-span-2.next-bg-five
-                  h3 Web Apps
-                  span.rb-temp Python / RoR
-                  img.service-thumb(alt='', title='', src='/resume_src/05(1).png')
-                  .rb-overlay
-                    span.rb-close close
-                    // service-content : starts
-                    .rb-week.clearfix.next-bg-five
-                      // service-matter : starts
-                      .service-matter
-                        span(style='font-size: 146px;') Web Apps
-                        // carousel : starts
-                        #service-carousel-05.carousel.slide
-                          // Wrapper for slides
-                          .carousel-inner
-                            .item.next.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/01(2).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/02(1).jpg')
-                              .carousel-caption
-                            .item.active.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/03(1).jpg')
-                              .carousel-caption
-                          // Wrapper for slides : ends
-                        // carousel : ends
-                      // service-matter : ends
-                      // service-info:starts
-                      .service-info
-                        h5.service-spec Python / RoR
-                        h3 Service Overview
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
-                      // service-info:ends
-                    // service-content : ends
-                  // rb : ends
-                li.rb-span-2.next-bg-eight
-                  h3 Mobile Apps
-                  span.rb-temp iOS / Android
-                  img.service-thumb(alt='', title='', src='/resume_src/06(1).png')
-                  .rb-overlay
-                    span.rb-close close
-                    // service-content : starts
-                    .rb-week.clearfix.next-bg-eight
-                      // service-matter : starts
-                      .service-matter
-                        span(style='font-size: 146px;') Mobile Apps
-                        // carousel : starts
-                        #service-carousel-06.carousel.slide
-                          // Wrapper for slides
-                          .carousel-inner
-                            .item.next.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/01(2).jpg')
-                              .carousel-caption
-                            .item
-                              img.service-spec-img(alt='', title='', src='/resume_src/02(1).jpg')
-                              .carousel-caption
-                            .item.active.left
-                              img.service-spec-img(alt='', title='', src='/resume_src/03(1).jpg')
-                              .carousel-caption
-                          // Wrapper for slides : ends
-                        // carousel : ends
-                      // service-matter : ends
-                      // service-info:starts
-                      .service-info
-                        h5.service-spec iOS / Android
-                        h3 Service Overview
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis. Sed volutpat tincidunt lorem, sed suscipit lacus lacinia at. Phasellus vel nulla scelerisque, viverra mi at, adipiscing est. Nullam porttitor turpis vel tellus rutrum porta. Cras sit amet varius nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique ultrices semper. Integer venenatis erat at sodales pharetra. Suspendisse sed erat sit amet sem interdum mollis.
-                      // service-info:ends
-                    // service-content : ends
-                  // rb : ends
-            // span : ends
-        // container:ends
-      
       // CONTACT : 联系方式
       section#contact.page-section
         section.container
@@ -612,7 +379,7 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
           .row.add-top.add-bottom
             article.col-md-12.text-left
               p.welcome-text.welcome-text-alt.fx.fx-slideInDown
-                | 欢迎留言，此处发送的消息将直接推送到本人常用邮箱。
+                | 欢迎留言，为了能更快的回复您，请确认邮箱无误。
           .row.add-top.add-bottom
             article.col-md-12.contact-panel.fx.fx-rollIn
               .row
@@ -717,11 +484,11 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                 li
                   //- 博客园
                   a(href='http://www.cnblogs.com/wteam-xq/' target='_blank')
-                    img(alt='next', title='博客园', src='/resume_src/bokeyuan1.png')
+                    img(alt='next', title='我的博客园', src='/resume_src/bokeyuan1.png')
                 li
                   //- github
                   a(href='https://github.com/wteam-xq' target='_blank')
-                    img(alt='next', title='github', src='/resume_src/github1.png')
+                    img(alt='next', title='我的github', src='/resume_src/github1.png')
     
     // mastwrap : ends
     script(src='/components/jquery.min.js', type='text/javascript')
