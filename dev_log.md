@@ -65,4 +65,7 @@ module.exports = new Db(
 * 方案： 新设置一自定义变量， 将前后台处理的json格式统一。
 
 * 04-04 使用mongoose 的 mongoose.model('tkdrule', TkdRuleSchema); 写入数据库时， 为什么会变成写入到tkdrules中去？
-* 解答：因为 mongoose.model(name,[schme],[collection],[skipInit]); 第一个参数的只是模型的名字并不是对应的数据库名。第三个参数才是对应的数据库表名。
+* 方案：因为 mongoose.model(name,[schme],[collection],[skipInit]); 第一个参数的只是模型的名字并不是对应的数据库名。第三个参数才是对应的数据库表名。
+
+* 04-14 个人简历前端页面， 冗余代码较多，需要时间慢慢清理代码；还是不如自己从零开始编码爽
+* 方案：慢慢删减
