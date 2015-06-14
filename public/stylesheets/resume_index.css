@@ -1266,7 +1266,7 @@ margin-bottom: 10px;
      left: 50%;
      top: 50%;
      background-color: #fafafa;
-     background-image: url(../images/loader.gif);
+     background-image: url(../images/resume/loader.gif);
      background-repeat: no-repeat;
      background-position: center;
      margin: -50px 0 0 -50px;
@@ -1363,14 +1363,32 @@ font-family:"Open_Sans_L";
     color: #444;
     font-size: 36px;
     line-height: 43px;
-font-family:"Open_Sans_B";
-    
-font-weight: bold;
+    font-family:"Open_Sans_B";
+    font-weight: bold;
 }
 .page-heading-alt{
     color: #fff;
 }
-
+/*好友评价样式*/
+.friend-talk{
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+.friend-heading{
+    color: #fff;
+    font-size: 36px;
+    line-height: 43px;
+    font-family:"Open_Sans_B";
+    font-weight: bold;
+}
+.friend-liner{
+  margin-top: 10px;
+  display: block;
+  height: 3px;
+  width: 40px;
+  border-bottom: solid 8px #eee;
+  display: none;
+}
 .welcome-text{
   font-size: 45px;
   line-height: 69px;
@@ -1398,7 +1416,7 @@ font-weight: bold;
 /*HOME*/
 
 #home {
-    background: url('../images/04.jpg') center center repeat;
+    background: url('../images/resume/04.jpg') center center repeat;
     background-size: cover;
     min-height: 500px;
     padding-top: 120px;
@@ -1407,7 +1425,7 @@ font-weight: bold;
 
 
 #welcome{
-   background: url('../images/04.jpg') center center repeat;
+   background: url('../images/resume/04.jpg') center center repeat;
     background-size: cover;
 }
 #welcome h1{
@@ -1635,12 +1653,19 @@ ul#portfolioFilter li.separator {
 }
 
 ul#portfolioFilter li a {
-    font-size: 16px;
-    color: #fff;
-    font-family: "Open_Sans_B";
-    
+  font-size: 16px;
+  color: #fff;
+  font-family: "Open_Sans_B";
 }
-
+ul#portfolioFilter li a:hover {
+  color: #23527c;
+  font-family: "Open_Sans_B";
+}
+ul#portfolioFilter li.active a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #23527c;
+}
 
 /*-- 3. Thumbs --*/
 div#portfolio_thumbs {
