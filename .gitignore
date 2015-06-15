@@ -2,9 +2,5 @@
 dest/*
 node_modules/*
 bower_components/*
-public/components/*
-public/fonts/*
-public/images/*
 public/upload_imgs/*
-public/resume_src/*
 npm-debug.log

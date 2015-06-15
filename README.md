@@ -1,5 +1,5 @@
 
-### 本人项目 后台代码（三国杀faq 个人网站 综合代码）
+### 个人简历网站（前后台）
 
 * 技术点： mongodb express bootstrap jquery
 
@@ -38,9 +38,6 @@ db.createCollection("tkdrules")
 ```
 
 *ps: 如果配置 mongodb 成window服务 遇到“服务名无效” 的问题， 请单击左下角"开始"图标-》所有程序-》附件-》右键“命令提示符” 以管理员身份运行*
-
-
-* 取[依赖库、图片资源](http://pan.baidu.com/s/1i33o2Mx)文件夹放入项目对应目录下。
 
 * 进入工程目录 打开cmd运行 npm install 安装node_modules的依赖模块
 ```Bash
