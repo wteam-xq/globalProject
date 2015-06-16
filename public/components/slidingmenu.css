@@ -143,7 +143,7 @@
 	border-radius: 50px;
 	line-height: 50px;
 	cursor: pointer;
-	background: rgba(0,0,0,0.2) url('../images/menu.png') center center;
+	background: rgba(0,0,0,0.2) url('../images/resume/menu.png') center center;
 	-webkit-transition: all .1s ease-in-out;
 	   -moz-transition: all .1s ease-in-out;
 		-ms-transition: all .1s ease-in-out;
@@ -153,7 +153,7 @@
 
 #sm-trigger:hover {
 	color: #ffffff;
-	background: #EB4B27 url('../images/menu.png') center center;
+	background: #EB4B27 url('../images/resume/menu.png') center center;
 	-webkit-transition: all .1s ease-in-out;
 	   -moz-transition: all .1s ease-in-out;
 		-ms-transition: all .1s ease-in-out;
