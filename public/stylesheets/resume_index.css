@@ -30,7 +30,6 @@ a:focus { outline: none; }
 .master { padding: 0; margin:0; width:100% auto; }
 
 /*Additional Spacing: These are addon classes for manual spacing of elements */
-.module {margin:20px;}
 
 .add-top { margin-top: 40px !important; }
 .remove-top { margin-top: 0 !important; }
@@ -60,8 +59,6 @@ a:focus { outline: none; }
 .remove-bottom { margin-bottom: 0 !important; }
 .half-bottom { margin-bottom: 15px !important; }
 .add-bottom-extra { margin-bottom: 60px !important; }
-
-
 
 .pad-top-half { padding-top: 10px !important; }
 .pad-left-half { padding-left: 10px !important; }
