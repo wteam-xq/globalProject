@@ -491,38 +491,4 @@ $(window).load(function(){
    });
   }
 
-  //Load and show portfolio pages
-  $("div#portfolio_thumbs ul li a.more_info").click(function(){
-     var source = $(this).attr("href");
-     $('div#filter_wrapper').slideUp(300, function(){
-               $('div#item_container').append('<div class="loading"></div>');
-               $('html,body').animate({scrollTop: $("#portfolio-wrap").offset().top - 95},'slow', function(){
-                         $('div#item_container').load(source, function(){
-                                   $('div.loading').remove();
-                                   $('#item_slider').flexslider({ controlNav: false, prevText: "<", nextText: ">" });
-                                   $('div#portfolio_item').slideDown(500, function(){
-                                             $('#item_video iframe').css('visibility','visible');
-                                             $('#control_buttons a#next').click(function(){
-                                                       loadNextItem();
-                                                       return false;
-                                             });
-                                             $('#control_buttons a#prev').click(function(){
-                                                       loadPrevItem();
-                                                       return false;
-                                             });
-                                             $('#control_buttons a#close').click(function(){
-                                                       $('div#portfolio_item').slideUp(300, function(){
-                                                                 $('div#item_container').empty();
-                                                                 $("div#filter_wrapper").slideDown(300);
-                                                       });
-                                             return false;
-                                             });//End: click()
-                                   });//End:slideDown()
-                         });//End:load()
-               });//End:animate()
-     });//End:slideUp
-   return false;
-  });
-
-
 });

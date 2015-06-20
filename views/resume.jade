@@ -184,19 +184,19 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                 #filter_wrapper
                   ul#portfolioFilter
                     li.active
-                      a.all(href='http://designova.net/next/index2.html#') 所有
+                      a.all(href='javascript:void(0);') 所有
                     li.separator /
                     li
-                      a.category1(href='http://designova.net/next/index2.html#') 中融兴项目
+                      a.category1(href='javascript:void(0);') 中融兴项目
                     li.separator /
                     li
-                      a.category2(href='http://designova.net/next/index2.html#') V企系统项目
+                      a.category2(href='javascript:void(0);') V企系统项目
                     li.separator /
                     li
-                      a.category3(href='http://designova.net/next/index2.html#') 广发证券OTC官网项目
+                      a.category3(href='javascript:void(0);') 广发证券OTC项目
                     li.separator /
                     li
-                      a.category4(href='http://designova.net/next/index2.html#') 个人项目
+                      a.category4(href='javascript:void(0);') 个人项目
               // End: Filter
           .row
             section#portfolio-wrap.clearfix
@@ -205,160 +205,85 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
                 ul.sortablePortfolio.clearfix
                   // 1st thumb
                   li.simple-bg-one(data-type='category1')
-                    // Thumbnail
-                    a.more_info(href='http://designova.net/next/photo_item.htm')
+                    // 如果该项目已经不在线， 跳转至项目介绍页面（待写）
+                    a.more_info(href='http://www.baidu.com' target='_blank')
                       img(alt='simple', title='simple', src='/resume_src/portfolio1.jpg')
                       img.rollover(alt='simple', title='simple', src='/resume_src/portfolio1_rollover.jpg')
                     // Info
                     .item_info
                       h3
-                        a.more_info(href='http://designova.net/next/photo_item.htm')
-                          span.next-bg-one Project TItle
+                        a.more_info(href='http://www.baidu.com' target='_blank')
+                          span.next-bg-one 思维导图在线版
                       p
-                        span image slider
+                        span 中融兴科技有限公司
+
                   // 2nd thumb
                   li.simple-bg-two(data-type='category2')
                     // Thumbnail
-                    a.more_info(href='http://designova.net/next/youtube_item.htm')
+                    a.more_info(href='http://www.baidu.com' target='_blank')
                       img(alt='simple', title='simple', src='/resume_src/portfolio2.jpg')
                       img.rollover(alt='simple', title='simple', src='/resume_src/portfolio2_rollover.jpg')
                     // Info
                     .item_info
                       h3
-                        a.more_info(href='http://designova.net/next/youtube_item.htm')
-                          span.next-bg-two Project TItle
+                        a.more_info(href='http://www.baidu.com' target='_blank')
+                          span.next-bg-two V企系统
                       p
-                        span youtube
+                        span V企科技有限公司
+
                   // 3rd thumb
                   li.simple-bg-three(data-type='category3')
                     // Thumbnail
-                    a.more_info(href='http://designova.net/next/vimeo_item.htm')
+                    a.more_info(href='http://www.baidu.com' target='_blank')
                       img(alt='simple', title='simple', src='/resume_src/portfolio3.jpg')
                       img.rollover(alt='simple', title='simple', src='/resume_src/portfolio3_rollover.jpg')
                     // Info
                     .item_info
                       h3
-                        a.more_info(href='http://designova.net/next/vimeo_item.htm')
-                          span.next-bg-three Project TItle
+                        a.more_info(href='http://www.baidu.com' target='_blank')
+                          span.next-bg-three 广发证券OTC官网
                       p
-                        span vimeo
+                        span 文思海辉信息技术有限公司
                   // 4th thumb
                   li.simple-bg-four(data-type='category1')
                     // Thumbnail
-                    a.more_info(href='http://designova.net/next/photo_item.htm')
+                    a.more_info(href='http://www.baidu.com' target='_blank')
                       img(alt='simple', title='simple', src='/resume_src/portfolio4.jpg')
                       img.rollover(alt='simple', title='simple', src='/resume_src/portfolio4_rollover.jpg')
                     // Info
                     .item_info
                       h3
-                        a.more_info(href='http://designova.net/next/photo_item.htm')
-                          span.next-bg-four Project TItle
+                        a.more_info(href='http://www.baidu.com' target='_blank')
+                          span.next-bg-four 园务系统即时聊天
                       p
-                        span image slider
+                        span 中融兴科技有限公司
                   // 5th thumb
                   li.simple-bg-five(data-type='category4')
                     // Thumbnail
-                    a(href='http://designova.net/next/images/portfolio_zoom/01.jpg', data-gal='prettyPhoto[gallery]')
+                    a.more_info(href='http://www.baidu.com' target='_blank')
                       img(alt='simple', title='simple', src='/resume_src/portfolio5.jpg')
                       img.rollover(alt='simple', title='simple', src='/resume_src/portfolio5_rollover.jpg')
                     // Info
                     .item_info
                       h3
-                        a(href='http://designova.net/next/images/portfolio_zoom/01.jpg', data-gal='prettyPhoto[gallery]')
-                          span.next-bg-five Project TItle
+                        a.more_info(href='http://www.baidu.com' target='_blank')
+                          span.next-bg-five JSP博客系统
                       p
-                        span lightbox image
+                        span 个人项目
                   // 6th thumb
-                  li.simple-bg-six(data-type='category2')
+                  li.simple-bg-six(data-type='category4')
                     // Thumbnail
-                    a.more_info(href='http://designova.net/next/youtube_item.htm')
+                    a.more_info(href='http://www.baidu.com' target='_blank')
                       img(alt='simple', title='simple', src='/resume_src/portfolio6.jpg')
                       img.rollover(alt='simple', title='simple', src='/resume_src/portfolio6_rollover.jpg')
                     // Info
                     .item_info
                       h3
-                        a.more_info(href='http://designova.net/next/youtube_item.htm')
-                          span.next-bg-six Project TItle
+                        a.more_info(href='http://www.baidu.com' target='_blank')
+                          span.next-bg-six 三国杀FAQ
                       p
-                        span youtube
-                  // 7th thumb
-                  li.simple-bg-seven(data-type='category4')
-                    // Thumbnail
-                    a(href='http://www.youtube.com/watch?v=1iIZeIy7TqM', data-gal='prettyPhoto[gallery]')
-                      img(alt='simple', title='simple', src='/resume_src/portfolio7.jpg')
-                      img.rollover(alt='simple', title='simple', src='/resume_src/portfolio7_rollover.jpg')
-                    // Info
-                    .item_info
-                      h3
-                        a(href='http://www.youtube.com/watch?v=1iIZeIy7TqM', data-gal='prettyPhoto[gallery]')
-                          span.next-bg-seven Project TItle
-                      p
-                        span lightbox video
-                  // 8th thumb
-                  li.simple-bg-eight(data-type='category1')
-                    // Thumbnail
-                    a.more_info(href='http://designova.net/next/photo_item.htm')
-                      img(alt='simple', title='simple', src='/resume_src/portfolio8.jpg')
-                      img.rollover(alt='simple', title='simple', src='/resume_src/portfolio8_rollover.jpg')
-                    // Info
-                    .item_info
-                      h3
-                        a.more_info(href='http://designova.net/next/photo_item.htm')
-                          span.next-bg-eight Project TItle
-                      p
-                        span photography
-                  // 9th thumb
-                  li.simple-bg-one(data-type='category3')
-                    // Thumbnail
-                    a.more_info(href='http://designova.net/next/vimeo_item.htm')
-                      img(alt='simple', title='simple', src='/resume_src/portfolio9.jpg')
-                      img.rollover(alt='simple', title='simple', src='/resume_src/portfolio9_rollover.jpg')
-                    // Info
-                    .item_info
-                      h3
-                        a.more_info(href='http://designova.net/next/vimeo_item.htm')
-                          span.next-bg-nine Project TItle
-                      p
-                        span vimeo
-                  // 10th thumb
-                  li.simple-bg-two(data-type='category2')
-                    // Thumbnail
-                    a.more_info(href='http://designova.net/next/youtube_item.htm')
-                      img(alt='simple', title='simple', src='/resume_src/portfolio10.jpg')
-                      img.rollover(alt='simple', title='simple', src='/resume_src/portfolio10_rollover.jpg')
-                    // Info
-                    .item_info
-                      h3
-                        a.more_info(href='http://designova.net/next/youtube_item.htm')
-                          span.next-bg-ten Project TItle
-                      p
-                        span youtube
-                  // 11th thumb
-                  li.simple-bg-three(data-type='category1')
-                    // Thumbnail
-                    a.more_info(href='http://designova.net/next/photo_item.htm')
-                      img(alt='simple', title='simple', src='/resume_src/portfolio11.jpg')
-                      img.rollover(alt='simple', title='simple', src='/resume_src/portfolio11_rollover.jpg')
-                    // Info
-                    .item_info
-                      h3
-                        a.more_info(href='http://designova.net/next/photo_item.htm')
-                          span.next-bg-eleven Project TItle
-                      p
-                        span photography
-                  // 12th thumb
-                  li.simple-bg-four(data-type='category2')
-                    // Thumbnail
-                    a.more_info(href='http://designova.net/next/youtube_item.htm')
-                      img(alt='simple', title='simple', src='/resume_src/portfolio12.jpg')
-                      img.rollover(alt='simple', title='simple', src='/resume_src/portfolio12_rollover.jpg')
-                    // Info
-                    .item_info
-                      h3
-                        a.more_info(href='http://designova.net/next/youtube_item.htm')
-                          span.next-bg-twelve Project TItle
-                      p
-                        span youtube
+                        span 个人项目
+                  
               // End: Thumbnails
       
       // CONTACT : 联系方式
@@ -442,7 +367,7 @@ html.js.no-touch.js.csstransitions.js.csstransitions.js(lang='en')
               .friend-liner
                 span
           .row
-            article.col-md-12.text-left.fx.fx-flipInY
+            article.col-md-12.text-left.fx-flipInY
               #cbp-qtrotator.cbp-qtrotator
                 .cbp-qtcontent
                   a(href='https://github.com/chenlongjian' title='陈龙坚' target='_blank')
