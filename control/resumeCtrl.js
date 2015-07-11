@@ -11,6 +11,7 @@ resumeCtrol.resumeIndex = function(req, res) {
     });
 };
 
+
 /**************************个人简历end**********************************/
 
 module.exports = resumeCtrol

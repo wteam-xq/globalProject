@@ -75,4 +75,23 @@ webCtrol.index = function(req, res){
   });
 }
 
+// ajax测试页面
+webCtrol.testGetPage = function (req, res) {
+  res.render('ajax', { 
+    title: 'ajax测试页面'
+  });
+}
+// ajax测试接口
+webCtrol.testGet = function(req, res) {
+  // 获取前端参数
+  var _param = req.query.name || '';
+  res.json({data: 'hello ' + _param});
+}
+
+webCtrol.testPost = function(req, res) {
+  // 获取前端参数
+  var _param = req.body.name || '';
+  res.json({data: 'modify name success: ' + _param});
+}
+
 module.exports = webCtrol

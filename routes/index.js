@@ -22,4 +22,10 @@ router.route('/user/login')
 // 用户登录异步请求
 router.get('/user/logout', frontControl.logout);
 
+// ajax 测试后台接口
+router.get('/test_get', frontControl.testGet);
+router.get('/ajax_page', frontControl.testGetPage);
+router.post('/test_post', frontControl.testPost);
+
+
 module.exports = router;

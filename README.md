@@ -62,3 +62,4 @@ router.get('/*', checkLogin);
 //检查用户是否已登录（修改后）
 //router.get('/*', checkLogin);
 ```
+* 打开浏览器（建议 chrome）输入： `localhost:3001`访问网站

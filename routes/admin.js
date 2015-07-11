@@ -30,7 +30,6 @@ router.post('/upload/ico', tkdControl.uploadIco);
 router.get('/resume', resumeControl.resumeIndex);
 router.get('/resume/index', resumeControl.resumeIndex);
 
-
 /* 用户组后台列表页 */
 router.get('/users', userCtrol.userList);
 // 查询用户(暂根据邮箱查询)
